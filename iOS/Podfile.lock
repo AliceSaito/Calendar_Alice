@@ -1,0 +1,16 @@
+PODS:
+  - CalculateCalendarLogic (0.3.0)
+
+DEPENDENCIES:
+  - CalculateCalendarLogic
+
+SPEC REPOS:
+  trunk:
+    - CalculateCalendarLogic
+
+SPEC CHECKSUMS:
+  CalculateCalendarLogic: cd5b2c706a8628bb924c5ee9d05c4f61bdbaf390
+
+PODFILE CHECKSUM: 29173ce872ff4595102194604db590072bafb72f
+
+COCOAPODS: 1.8.4
