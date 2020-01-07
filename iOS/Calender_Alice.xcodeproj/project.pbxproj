@@ -15,6 +15,7 @@
 		6583FA2623AA04F000953F6E /* Calender_AliceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583FA2523AA04F000953F6E /* Calender_AliceTests.swift */; };
 		6583FA3123AA04F100953F6E /* Calender_AliceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583FA3023AA04F100953F6E /* Calender_AliceUITests.swift */; };
 		65FEEEAB23AA06900092D264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FEEEAA23AA06900092D264 /* Main.storyboard */; };
+		7A8E3E825CB4DB96B8DF77E3 /* Pods_Calender_Alice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817552B9877B2AB96706506B /* Pods_Calender_Alice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B50EA499AD30AAC48BFDE93 /* Pods-Calender_Alice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calender_Alice.debug.xcconfig"; path = "Target Support Files/Pods-Calender_Alice/Pods-Calender_Alice.debug.xcconfig"; sourceTree = "<group>"; };
+		530422A2F470803BE939D7C7 /* Pods-Calender_Alice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calender_Alice.release.xcconfig"; path = "Target Support Files/Pods-Calender_Alice/Pods-Calender_Alice.release.xcconfig"; sourceTree = "<group>"; };
 		6583FA0B23AA04EF00953F6E /* Calender_Alice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calender_Alice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6583FA0E23AA04EF00953F6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6583FA1023AA04EF00953F6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		6583FA3023AA04F100953F6E /* Calender_AliceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender_AliceUITests.swift; sourceTree = "<group>"; };
 		6583FA3223AA04F100953F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FEEEAA23AA06900092D264 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		817552B9877B2AB96706506B /* Pods_Calender_Alice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calender_Alice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8E3E825CB4DB96B8DF77E3 /* Pods_Calender_Alice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				6583FA2423AA04F000953F6E /* Calender_AliceTests */,
 				6583FA2F23AA04F100953F6E /* Calender_AliceUITests */,
 				6583FA0C23AA04EF00953F6E /* Products */,
+				67E644BBDC7FF1E74F36CF5B /* Pods */,
+				7C77E6A5F5E06F0F48CFB455 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +135,24 @@
 			path = Calender_AliceUITests;
 			sourceTree = "<group>";
 		};
+		67E644BBDC7FF1E74F36CF5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B50EA499AD30AAC48BFDE93 /* Pods-Calender_Alice.debug.xcconfig */,
+				530422A2F470803BE939D7C7 /* Pods-Calender_Alice.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7C77E6A5F5E06F0F48CFB455 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				817552B9877B2AB96706506B /* Pods_Calender_Alice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6583FA3523AA04F100953F6E /* Build configuration list for PBXNativeTarget "Calender_Alice" */;
 			buildPhases = (
+				7314F89AEA812F99920662E8 /* [CP] Check Pods Manifest.lock */,
 				6583FA0723AA04EF00953F6E /* Sources */,
 				6583FA0823AA04EF00953F6E /* Frameworks */,
 				6583FA0923AA04EF00953F6E /* Resources */,
+				9C5BD7303EF378C7AD7BC9F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7314F89AEA812F99920662E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Calender_Alice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C5BD7303EF378C7AD7BC9F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calender_Alice/Pods-Calender_Alice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calender_Alice/Pods-Calender_Alice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calender_Alice/Pods-Calender_Alice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6583FA0723AA04EF00953F6E /* Sources */ = {
@@ -424,6 +493,7 @@
 		};
 		6583FA3623AA04F100953F6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B50EA499AD30AAC48BFDE93 /* Pods-Calender_Alice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +512,7 @@
 		};
 		6583FA3723AA04F100953F6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 530422A2F470803BE939D7C7 /* Pods-Calender_Alice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
