@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-974" y="375"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="p63-R4-r7a">
             <objects>
                 <viewController id="pSA-G2-9UN" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="sTR-t1-ZMO"/>
+                                    <navigationItem title="title" id="sTR-t1-ZMO"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-Kz-FWv">
@@ -72,7 +72,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="AXi-Bz-2ty"/>
                     </view>
-                    <navigationItem key="navigationItem" id="N2B-Xt-aUg"/>
+                    <navigationItem key="navigationItem" title="Title" id="jeB-xj-waz">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="F0T-MF-X8e"/>
+                            <barButtonItem title="Item" image="list.dash" catalog="system" id="8rN-Ui-eTI"/>
+                            <barButtonItem systemItem="add" id="ZkG-EI-YRX"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <segue destination="zP3-zK-zAn" kind="show" id="tLZ-aQ-7Pf"/>
                     </connections>
@@ -96,6 +102,13 @@
                                     <navigationItem title="Title" id="ELl-xp-lt4"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日月火水木金土" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-fP-Pc0">
+                                <rect key="frame" x="0.0" y="108" width="414" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gez-2W-5wl">
                                 <rect key="frame" x="0.0" y="190" width="414" height="473"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,13 +131,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日月火水木金土" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-fP-Pc0">
-                                <rect key="frame" x="0.0" y="108" width="414" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="EJg-GY-NLM"/>
@@ -194,4 +200,7 @@
             <point key="canvasLocation" x="2740.579710144928" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
+    </resources>
 </document>
