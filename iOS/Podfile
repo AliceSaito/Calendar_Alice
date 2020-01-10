@@ -1,6 +1,6 @@
 platform :ios, '13.0'
 use_frameworks!
 
-target 'Calender_Alice' do
+target 'Calendar_Alice' do
 	pod 'CalculateCalendarLogic'
 end
