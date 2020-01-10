@@ -10,6 +10,7 @@
 		6572EB7423C81690003BD2EF /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572EB7323C81690003BD2EF /* WeekCollectionViewCell.swift */; };
 		6572EB7623C839F8003BD2EF /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572EB7523C839F8003BD2EF /* YearViewController.swift */; };
 		6572EB7823C83A35003BD2EF /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572EB7723C83A35003BD2EF /* DayViewController.swift */; };
+		6572EB7B23C84A12003BD2EF /* CalenderCountBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572EB7A23C84A12003BD2EF /* CalenderCountBase.swift */; };
 		6583FA0F23AA04EF00953F6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583FA0E23AA04EF00953F6E /* AppDelegate.swift */; };
 		6583FA1123AA04EF00953F6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583FA1023AA04EF00953F6E /* SceneDelegate.swift */; };
 		6583FA1323AA04EF00953F6E /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6583FA1223AA04EF00953F6E /* WeekViewController.swift */; };
@@ -44,6 +45,7 @@
 		6572EB7323C81690003BD2EF /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewCell.swift; sourceTree = "<group>"; };
 		6572EB7523C839F8003BD2EF /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
 		6572EB7723C83A35003BD2EF /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		6572EB7A23C84A12003BD2EF /* CalenderCountBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCountBase.swift; sourceTree = "<group>"; };
 		6583FA0B23AA04EF00953F6E /* Calender_Alice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calender_Alice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6583FA0E23AA04EF00953F6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6583FA1023AA04EF00953F6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6572EB7923C84959003BD2EF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				6572EB7A23C84A12003BD2EF /* CalenderCountBase.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		6572EB7C23C84A33003BD2EF /* BasicScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6583FA0E23AA04EF00953F6E /* AppDelegate.swift */,
+				6583FA1023AA04EF00953F6E /* SceneDelegate.swift */,
+				6572EB7323C81690003BD2EF /* WeekCollectionViewCell.swift */,
+				6572EB7523C839F8003BD2EF /* YearViewController.swift */,
+				6572EB7723C83A35003BD2EF /* DayViewController.swift */,
+				6583FA1223AA04EF00953F6E /* WeekViewController.swift */,
+				65FEEEAA23AA06900092D264 /* Main.storyboard */,
+			);
+			path = BasicScreen;
+			sourceTree = "<group>";
+		};
 		6583FA0223AA04EF00953F6E = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +136,8 @@
 		6583FA0D23AA04EF00953F6E /* Calender_Alice */ = {
 			isa = PBXGroup;
 			children = (
-				6583FA0E23AA04EF00953F6E /* AppDelegate.swift */,
-				6583FA1023AA04EF00953F6E /* SceneDelegate.swift */,
-				6572EB7323C81690003BD2EF /* WeekCollectionViewCell.swift */,
-				6572EB7523C839F8003BD2EF /* YearViewController.swift */,
-				6572EB7723C83A35003BD2EF /* DayViewController.swift */,
-				6583FA1223AA04EF00953F6E /* WeekViewController.swift */,
-				65FEEEAA23AA06900092D264 /* Main.storyboard */,
+				6572EB7C23C84A33003BD2EF /* BasicScreen */,
+				6572EB7923C84959003BD2EF /* Utility */,
 				6583FA1723AA04F000953F6E /* Assets.xcassets */,
 				6583FA1923AA04F000953F6E /* LaunchScreen.storyboard */,
 				6583FA1C23AA04F000953F6E /* Info.plist */,
@@ -339,6 +358,7 @@
 				6583FA1323AA04EF00953F6E /* WeekViewController.swift in Sources */,
 				6583FA0F23AA04EF00953F6E /* AppDelegate.swift in Sources */,
 				6572EB7423C81690003BD2EF /* WeekCollectionViewCell.swift in Sources */,
+				6572EB7B23C84A12003BD2EF /* CalenderCountBase.swift in Sources */,
 				6572EB7623C839F8003BD2EF /* YearViewController.swift in Sources */,
 				6583FA1123AA04EF00953F6E /* SceneDelegate.swift in Sources */,
 				6572EB7823C83A35003BD2EF /* DayViewController.swift in Sources */,
