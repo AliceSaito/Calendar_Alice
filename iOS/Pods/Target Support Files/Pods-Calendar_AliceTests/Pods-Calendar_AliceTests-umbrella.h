@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double CalculateCalendarLogicVersionNumber;
-FOUNDATION_EXPORT const unsigned char CalculateCalendarLogicVersionString[];
+FOUNDATION_EXPORT double Pods_Calendar_AliceTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Calendar_AliceTestsVersionString[];
 

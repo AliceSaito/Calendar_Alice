@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Calendar_AliceVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Calendar_AliceVersionString[];
+FOUNDATION_EXPORT double Pods_Calendar_Alice_Calendar_AliceUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Calendar_Alice_Calendar_AliceUITestsVersionString[];
 

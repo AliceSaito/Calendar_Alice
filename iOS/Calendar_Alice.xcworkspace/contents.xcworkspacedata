@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/saito.alice/Calendar_Alice/iOS/Calendar_Alice.xcodeproj">
+      location = "group:Calendar_Alice.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Calendar_Alice.xcodeproj">
    </FileRef>
 </Workspace>

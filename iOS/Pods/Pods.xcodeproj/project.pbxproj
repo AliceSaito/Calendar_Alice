@@ -7,105 +7,127 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		007A81C8F3089C7EB5BBC8B09F3B6195 /* CalculateCalendarLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919709E740DCB95D2650ECE72316A4F /* CalculateCalendarLogic.swift */; };
-		15635FD91D970E9B569B96AC270D0A33 /* Pods-Calendar_Alice-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D790A10A812132E299408C9AFFAF5 /* Pods-Calendar_Alice-dummy.m */; };
-		387DB977A58D3C372410E50A21AD2757 /* CalculateCalendarLogic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDE7DFBB00E4664FE6265EAC2BF616B /* CalculateCalendarLogic-dummy.m */; };
-		67483C9F4CCB669D17EB6C4D24ED5D8F /* CalculateCalendarLogic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD5904812A9952D2CD259D0A0736C8A /* CalculateCalendarLogic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78C85048DE27D7552397ABF7DDD1CE00 /* Pods-Calendar_Alice-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2BE8E08F92C8799062185715568807B /* Pods-Calendar_Alice-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		848685DF93779136131C0586E8E49C1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		E90114EE8CB94D770BB59E3DA50C2BC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		05B39F1B64CD01F1DF3BE2F916BF225A /* Pods-Calendar_Alice-Calendar_AliceUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0CBEA4D19D45836DE12AA1300B7D42E /* Pods-Calendar_Alice-Calendar_AliceUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22D156AF09BE66930DF241EB027D1107 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		30526CF30EAB0BC33182B8020B8A2A92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		36C70C4635099C0255BAD32165362812 /* Pods-Calendar_AliceTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5276805ADB3113B2276A78F707C443D0 /* Pods-Calendar_AliceTests-dummy.m */; };
+		374BE10F6409F065AA0F5E85F94DA6E4 /* Pods-Calendar_Alice-Calendar_AliceUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51B396CC37D86FC339EEE49748A2F4 /* Pods-Calendar_Alice-Calendar_AliceUITests-dummy.m */; };
+		523A9216B6F15B507C4BD5CDB5FCBF77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		55F9E7E47D1162B2CDBA41D856DE9D47 /* Pods-Calendar_Alice-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D60AA943F20FAA7521E2431FB7478D /* Pods-Calendar_Alice-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76FC8A280D9D8B06A2C4C78AD3DF213F /* Pods-Calendar_Alice-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3913A3D31E80587A4055E5FF6459C8 /* Pods-Calendar_Alice-dummy.m */; };
+		AA36F705F67C9B73CF14107BCE9FD019 /* Pods-Calendar_AliceTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BF675B5CEF4D22BCBF185FA6CCF7BA5 /* Pods-Calendar_AliceTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		94844D4F6DD03938789789A36FC1D219 /* PBXContainerItemProxy */ = {
+		640083B31114C4C906479A5E875A9FC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 25905D9C58C5D5810BD56A75B6ECABD3;
-			remoteInfo = CalculateCalendarLogic;
+			remoteGlobalIDString = 34E86CE38C8DB8CAC6CE9169D6CAA25C;
+			remoteInfo = "Pods-Calendar_Alice";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07993BDF68E03ED2735AA9C93641C360 /* Pods_Calendar_AliceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Calendar_AliceTests.framework; path = "Pods-Calendar_AliceTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A9EA94BFD1207B5E782F39668ABE26F /* Pods-Calendar_AliceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_AliceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0BF675B5CEF4D22BCBF185FA6CCF7BA5 /* Pods-Calendar_AliceTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Calendar_AliceTests-umbrella.h"; sourceTree = "<group>"; };
+		169F7F30EABD836205B38267BC11D318 /* Pods-Calendar_AliceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_AliceTests.release.xcconfig"; sourceTree = "<group>"; };
+		1B8B58259C97CC3E6AD601EF3A7C7A7B /* Pods-Calendar_AliceTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Calendar_AliceTests.modulemap"; sourceTree = "<group>"; };
+		1F25CE5A2B1A71DAC12B2A54F6B41F85 /* Pods-Calendar_Alice-Calendar_AliceUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_Alice-Calendar_AliceUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		35ACB137986C71058265F8D3F8843907 /* Pods-Calendar_Alice-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Calendar_Alice-frameworks.sh"; sourceTree = "<group>"; };
-		4478346FAA8860C12912FD6735BE1B70 /* CalculateCalendarLogic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CalculateCalendarLogic.modulemap; sourceTree = "<group>"; };
-		4A15F2D0AA6181D9B6EF348A5A62BCA7 /* CalculateCalendarLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CalculateCalendarLogic.framework; path = CalculateCalendarLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57D71DEFAAB303B191AF7AF83CF68164 /* CalculateCalendarLogic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CalculateCalendarLogic-prefix.pch"; sourceTree = "<group>"; };
-		5AD5904812A9952D2CD259D0A0736C8A /* CalculateCalendarLogic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CalculateCalendarLogic-umbrella.h"; sourceTree = "<group>"; };
-		6919709E740DCB95D2650ECE72316A4F /* CalculateCalendarLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalculateCalendarLogic.swift; path = CalculateCalendarLogic/CalculateCalendarLogic.swift; sourceTree = "<group>"; };
-		7EEA61442575473B70C287058E54C8F8 /* Pods-Calendar_Alice-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_Alice-acknowledgements.plist"; sourceTree = "<group>"; };
-		8D02759F1F1272AF3727BF7F57B97C99 /* Pods-Calendar_Alice-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Calendar_Alice-acknowledgements.markdown"; sourceTree = "<group>"; };
+		337A0C2F5DEB662121C022E761A0F4DA /* Pods-Calendar_Alice-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_Alice-acknowledgements.plist"; sourceTree = "<group>"; };
+		34266DF3B860342DD8FE9A05C5816588 /* Pods-Calendar_Alice-Calendar_AliceUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Calendar_Alice-Calendar_AliceUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5276805ADB3113B2276A78F707C443D0 /* Pods-Calendar_AliceTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Calendar_AliceTests-dummy.m"; sourceTree = "<group>"; };
+		5E74763D4B1FA583390E5EF1C355BC72 /* Pods-Calendar_Alice-Calendar_AliceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_Alice-Calendar_AliceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		66379AE7178CAB459C95F8EC34A4134E /* Pods-Calendar_Alice-Calendar_AliceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_Alice-Calendar_AliceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		79D60AA943F20FAA7521E2431FB7478D /* Pods-Calendar_Alice-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Calendar_Alice-umbrella.h"; sourceTree = "<group>"; };
+		83E69EB0C7ECCA145DDA6856E4FBCBA8 /* Pods-Calendar_Alice-Calendar_AliceUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Calendar_Alice-Calendar_AliceUITests.modulemap"; sourceTree = "<group>"; };
+		8D51B396CC37D86FC339EEE49748A2F4 /* Pods-Calendar_Alice-Calendar_AliceUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Calendar_Alice-Calendar_AliceUITests-dummy.m"; sourceTree = "<group>"; };
+		95D69DCFA0B72E7BAFDA00EDD3C904A3 /* Pods-Calendar_Alice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_Alice.debug.xcconfig"; sourceTree = "<group>"; };
 		9C7532514E6C61F446FC186DF58576C4 /* Pods_Calendar_Alice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Calendar_Alice.framework; path = "Pods-Calendar_Alice.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3913A3D31E80587A4055E5FF6459C8 /* Pods-Calendar_Alice-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Calendar_Alice-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EB58464E1CB849A3E25FF02DD3FF733 /* Pods-Calendar_Alice.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Calendar_Alice.modulemap"; sourceTree = "<group>"; };
-		A41D790A10A812132E299408C9AFFAF5 /* Pods-Calendar_Alice-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Calendar_Alice-dummy.m"; sourceTree = "<group>"; };
-		C2BE8E08F92C8799062185715568807B /* Pods-Calendar_Alice-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Calendar_Alice-umbrella.h"; sourceTree = "<group>"; };
-		CECBE5FC2A4739BDB3C605A939E1421C /* Pods-Calendar_Alice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_Alice.release.xcconfig"; sourceTree = "<group>"; };
-		D7F8BBB49CCC13B6142BA128886F3835 /* Pods-Calendar_Alice-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_Alice-Info.plist"; sourceTree = "<group>"; };
-		D880503EBD6EA796FDDF41649134CF6E /* Pods-Calendar_Alice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_Alice.debug.xcconfig"; sourceTree = "<group>"; };
-		D9BA8200D34360EAD660251AEDF7693F /* CalculateCalendarLogic.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CalculateCalendarLogic.xcconfig; sourceTree = "<group>"; };
-		ECDE7DFBB00E4664FE6265EAC2BF616B /* CalculateCalendarLogic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CalculateCalendarLogic-dummy.m"; sourceTree = "<group>"; };
-		FBD2E747D157F21BC67E60233C06D0EA /* CalculateCalendarLogic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CalculateCalendarLogic-Info.plist"; sourceTree = "<group>"; };
+		A12AE14CAEB6778944D6CFD2A0D4CD2B /* Pods-Calendar_Alice.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Calendar_Alice.modulemap"; sourceTree = "<group>"; };
+		AF6DDC42C371F512C4654A286A06A02F /* Pods-Calendar_AliceTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Calendar_AliceTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B46A708E2006770E439BC54A122C2A38 /* Pods-Calendar_Alice-Calendar_AliceUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_Alice-Calendar_AliceUITests-Info.plist"; sourceTree = "<group>"; };
+		C1EF3F545D11EDDE6567D62A1D7EE0BF /* Pods_Calendar_Alice_Calendar_AliceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Calendar_Alice_Calendar_AliceUITests.framework; path = "Pods-Calendar_Alice-Calendar_AliceUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFAE486D814AA909B4C610A3ADB140E9 /* Pods-Calendar_AliceTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_AliceTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D79CED81940F70FEA3B11C2869DC0D58 /* Pods-Calendar_AliceTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_AliceTests-Info.plist"; sourceTree = "<group>"; };
+		D9911D6B7E943D3BB6046B094D2EB9A6 /* Pods-Calendar_Alice-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Calendar_Alice-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E09E52D2EFC01BAB813E7BCB3E3C1483 /* Pods-Calendar_Alice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Calendar_Alice.release.xcconfig"; sourceTree = "<group>"; };
+		E0CBEA4D19D45836DE12AA1300B7D42E /* Pods-Calendar_Alice-Calendar_AliceUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Calendar_Alice-Calendar_AliceUITests-umbrella.h"; sourceTree = "<group>"; };
+		F1D64A03681A9E45A537ADD1F8D59FFE /* Pods-Calendar_Alice-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Calendar_Alice-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		93E6A1A64482AA9C359A1BEB53C1BC83 /* Frameworks */ = {
+		152DA51635AF48F11DC2BD9160A5063F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90114EE8CB94D770BB59E3DA50C2BC6 /* Foundation.framework in Frameworks */,
+				523A9216B6F15B507C4BD5CDB5FCBF77 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B87182DF5C039B0653E85E3CA5765A1 /* Frameworks */ = {
+		203BEED33B9437485355676AC49B6C7C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848685DF93779136131C0586E8E49C1F /* Foundation.framework in Frameworks */,
+				30526CF30EAB0BC33182B8020B8A2A92 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81FB03E1017E84E0F59C8A624D352C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D156AF09BE66930DF241EB027D1107 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		023EC7D9797F5F5A53A404D52C97DBC8 /* Pods */ = {
+		263BA354F3332BC509C0E563919CC290 /* Pods-Calendar_Alice-Calendar_AliceUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F1CC3B36374F65BE7EDC669B031C72D0 /* CalculateCalendarLogic */,
+				83E69EB0C7ECCA145DDA6856E4FBCBA8 /* Pods-Calendar_Alice-Calendar_AliceUITests.modulemap */,
+				34266DF3B860342DD8FE9A05C5816588 /* Pods-Calendar_Alice-Calendar_AliceUITests-acknowledgements.markdown */,
+				1F25CE5A2B1A71DAC12B2A54F6B41F85 /* Pods-Calendar_Alice-Calendar_AliceUITests-acknowledgements.plist */,
+				8D51B396CC37D86FC339EEE49748A2F4 /* Pods-Calendar_Alice-Calendar_AliceUITests-dummy.m */,
+				B46A708E2006770E439BC54A122C2A38 /* Pods-Calendar_Alice-Calendar_AliceUITests-Info.plist */,
+				E0CBEA4D19D45836DE12AA1300B7D42E /* Pods-Calendar_Alice-Calendar_AliceUITests-umbrella.h */,
+				5E74763D4B1FA583390E5EF1C355BC72 /* Pods-Calendar_Alice-Calendar_AliceUITests.debug.xcconfig */,
+				66379AE7178CAB459C95F8EC34A4134E /* Pods-Calendar_Alice-Calendar_AliceUITests.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Pods-Calendar_Alice-Calendar_AliceUITests";
+			path = "Target Support Files/Pods-Calendar_Alice-Calendar_AliceUITests";
 			sourceTree = "<group>";
 		};
-		148C85A66FFF5F933685FBE37449553E /* Targets Support Files */ = {
+		43A92628EDBF6C6DCB366CD56E452CA2 /* Pods-Calendar_Alice */ = {
 			isa = PBXGroup;
 			children = (
-				F356A1A80BA8A4DFE19A2EE18912EF4D /* Pods-Calendar_Alice */,
+				A12AE14CAEB6778944D6CFD2A0D4CD2B /* Pods-Calendar_Alice.modulemap */,
+				D9911D6B7E943D3BB6046B094D2EB9A6 /* Pods-Calendar_Alice-acknowledgements.markdown */,
+				337A0C2F5DEB662121C022E761A0F4DA /* Pods-Calendar_Alice-acknowledgements.plist */,
+				9D3913A3D31E80587A4055E5FF6459C8 /* Pods-Calendar_Alice-dummy.m */,
+				F1D64A03681A9E45A537ADD1F8D59FFE /* Pods-Calendar_Alice-Info.plist */,
+				79D60AA943F20FAA7521E2431FB7478D /* Pods-Calendar_Alice-umbrella.h */,
+				95D69DCFA0B72E7BAFDA00EDD3C904A3 /* Pods-Calendar_Alice.debug.xcconfig */,
+				E09E52D2EFC01BAB813E7BCB3E3C1483 /* Pods-Calendar_Alice.release.xcconfig */,
+			);
+			name = "Pods-Calendar_Alice";
+			path = "Target Support Files/Pods-Calendar_Alice";
+			sourceTree = "<group>";
+		};
+		831418F36CC3E0C6CC98B2575F3203EE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				43A92628EDBF6C6DCB366CD56E452CA2 /* Pods-Calendar_Alice */,
+				263BA354F3332BC509C0E563919CC290 /* Pods-Calendar_Alice-Calendar_AliceUITests */,
+				D54D4831B6FCEB2829BB7B8DD7D0C5A6 /* Pods-Calendar_AliceTests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		55A007DA34AF2D66A41E48097FCC8E6D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4478346FAA8860C12912FD6735BE1B70 /* CalculateCalendarLogic.modulemap */,
-				D9BA8200D34360EAD660251AEDF7693F /* CalculateCalendarLogic.xcconfig */,
-				ECDE7DFBB00E4664FE6265EAC2BF616B /* CalculateCalendarLogic-dummy.m */,
-				FBD2E747D157F21BC67E60233C06D0EA /* CalculateCalendarLogic-Info.plist */,
-				57D71DEFAAB303B191AF7AF83CF68164 /* CalculateCalendarLogic-prefix.pch */,
-				5AD5904812A9952D2CD259D0A0736C8A /* CalculateCalendarLogic-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/CalculateCalendarLogic";
-			sourceTree = "<group>";
-		};
-		9AAA5B5C782FE856EEDF7225253888B2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4A15F2D0AA6181D9B6EF348A5A62BCA7 /* CalculateCalendarLogic.framework */,
-				9C7532514E6C61F446FC186DF58576C4 /* Pods_Calendar_Alice.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -121,9 +143,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				023EC7D9797F5F5A53A404D52C97DBC8 /* Pods */,
-				9AAA5B5C782FE856EEDF7225253888B2 /* Products */,
-				148C85A66FFF5F933685FBE37449553E /* Targets Support Files */,
+				F01C7004A0201046A71EFB22F6005B49 /* Products */,
+				831418F36CC3E0C6CC98B2575F3203EE /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,90 +156,115 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F1CC3B36374F65BE7EDC669B031C72D0 /* CalculateCalendarLogic */ = {
+		D54D4831B6FCEB2829BB7B8DD7D0C5A6 /* Pods-Calendar_AliceTests */ = {
 			isa = PBXGroup;
 			children = (
-				6919709E740DCB95D2650ECE72316A4F /* CalculateCalendarLogic.swift */,
-				55A007DA34AF2D66A41E48097FCC8E6D /* Support Files */,
+				1B8B58259C97CC3E6AD601EF3A7C7A7B /* Pods-Calendar_AliceTests.modulemap */,
+				AF6DDC42C371F512C4654A286A06A02F /* Pods-Calendar_AliceTests-acknowledgements.markdown */,
+				CFAE486D814AA909B4C610A3ADB140E9 /* Pods-Calendar_AliceTests-acknowledgements.plist */,
+				5276805ADB3113B2276A78F707C443D0 /* Pods-Calendar_AliceTests-dummy.m */,
+				D79CED81940F70FEA3B11C2869DC0D58 /* Pods-Calendar_AliceTests-Info.plist */,
+				0BF675B5CEF4D22BCBF185FA6CCF7BA5 /* Pods-Calendar_AliceTests-umbrella.h */,
+				0A9EA94BFD1207B5E782F39668ABE26F /* Pods-Calendar_AliceTests.debug.xcconfig */,
+				169F7F30EABD836205B38267BC11D318 /* Pods-Calendar_AliceTests.release.xcconfig */,
 			);
-			name = CalculateCalendarLogic;
-			path = CalculateCalendarLogic;
+			name = "Pods-Calendar_AliceTests";
+			path = "Target Support Files/Pods-Calendar_AliceTests";
 			sourceTree = "<group>";
 		};
-		F356A1A80BA8A4DFE19A2EE18912EF4D /* Pods-Calendar_Alice */ = {
+		F01C7004A0201046A71EFB22F6005B49 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9EB58464E1CB849A3E25FF02DD3FF733 /* Pods-Calendar_Alice.modulemap */,
-				8D02759F1F1272AF3727BF7F57B97C99 /* Pods-Calendar_Alice-acknowledgements.markdown */,
-				7EEA61442575473B70C287058E54C8F8 /* Pods-Calendar_Alice-acknowledgements.plist */,
-				A41D790A10A812132E299408C9AFFAF5 /* Pods-Calendar_Alice-dummy.m */,
-				35ACB137986C71058265F8D3F8843907 /* Pods-Calendar_Alice-frameworks.sh */,
-				D7F8BBB49CCC13B6142BA128886F3835 /* Pods-Calendar_Alice-Info.plist */,
-				C2BE8E08F92C8799062185715568807B /* Pods-Calendar_Alice-umbrella.h */,
-				D880503EBD6EA796FDDF41649134CF6E /* Pods-Calendar_Alice.debug.xcconfig */,
-				CECBE5FC2A4739BDB3C605A939E1421C /* Pods-Calendar_Alice.release.xcconfig */,
+				9C7532514E6C61F446FC186DF58576C4 /* Pods_Calendar_Alice.framework */,
+				C1EF3F545D11EDDE6567D62A1D7EE0BF /* Pods_Calendar_Alice_Calendar_AliceUITests.framework */,
+				07993BDF68E03ED2735AA9C93641C360 /* Pods_Calendar_AliceTests.framework */,
 			);
-			name = "Pods-Calendar_Alice";
-			path = "Target Support Files/Pods-Calendar_Alice";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		039AA70964972CD49EB5B08789AECF55 /* Headers */ = {
+		1D41BE0010536647E99F0E9CB2C0093B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67483C9F4CCB669D17EB6C4D24ED5D8F /* CalculateCalendarLogic-umbrella.h in Headers */,
+				55F9E7E47D1162B2CDBA41D856DE9D47 /* Pods-Calendar_Alice-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2D2EE6FA40A9E2171A16D0164474BFA /* Headers */ = {
+		35A7F784495A5C91DB01E826CF8E1F3B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78C85048DE27D7552397ABF7DDD1CE00 /* Pods-Calendar_Alice-umbrella.h in Headers */,
+				AA36F705F67C9B73CF14107BCE9FD019 /* Pods-Calendar_AliceTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A654DD26099155124C8EB44623772BF2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05B39F1B64CD01F1DF3BE2F916BF225A /* Pods-Calendar_Alice-Calendar_AliceUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		25905D9C58C5D5810BD56A75B6ECABD3 /* CalculateCalendarLogic */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7444CD359A14ECFF905BB0379BFA6812 /* Build configuration list for PBXNativeTarget "CalculateCalendarLogic" */;
-			buildPhases = (
-				039AA70964972CD49EB5B08789AECF55 /* Headers */,
-				843EEEA7846CFE52213C8F06208F0902 /* Sources */,
-				9B87182DF5C039B0653E85E3CA5765A1 /* Frameworks */,
-				71D3E9CED42B20F5B4670DDC69257365 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CalculateCalendarLogic;
-			productName = CalculateCalendarLogic;
-			productReference = 4A15F2D0AA6181D9B6EF348A5A62BCA7 /* CalculateCalendarLogic.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		34E86CE38C8DB8CAC6CE9169D6CAA25C /* Pods-Calendar_Alice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00370293058D3CCE67C62E9571BB4358 /* Build configuration list for PBXNativeTarget "Pods-Calendar_Alice" */;
+			buildConfigurationList = 6D1C3779BD167ABD2461DBEE82D3D656 /* Build configuration list for PBXNativeTarget "Pods-Calendar_Alice" */;
 			buildPhases = (
-				B2D2EE6FA40A9E2171A16D0164474BFA /* Headers */,
-				26475D5914060E94589317B47F767648 /* Sources */,
-				93E6A1A64482AA9C359A1BEB53C1BC83 /* Frameworks */,
-				BA9E017A20D8382A783BCC6F7CC3F873 /* Resources */,
+				1D41BE0010536647E99F0E9CB2C0093B /* Headers */,
+				A1C1E03C7CE14FE874F8585DFFCE57B8 /* Sources */,
+				152DA51635AF48F11DC2BD9160A5063F /* Frameworks */,
+				DF25AEAAA4D3934814D1953F3175546A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				47F8BDA48E23471CB186E3C85D6BA8B1 /* PBXTargetDependency */,
 			);
 			name = "Pods-Calendar_Alice";
 			productName = "Pods-Calendar_Alice";
 			productReference = 9C7532514E6C61F446FC186DF58576C4 /* Pods_Calendar_Alice.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		55962418B4861F863C5EE92F6305755B /* Pods-Calendar_Alice-Calendar_AliceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 985B23F13C305CFE026E5AB7FE200D18 /* Build configuration list for PBXNativeTarget "Pods-Calendar_Alice-Calendar_AliceUITests" */;
+			buildPhases = (
+				A654DD26099155124C8EB44623772BF2 /* Headers */,
+				54BC0621E3548E94DDBB8063B0726114 /* Sources */,
+				81FB03E1017E84E0F59C8A624D352C97 /* Frameworks */,
+				A2A6B92ADFDBFF1EFB82BC27A9171AA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Calendar_Alice-Calendar_AliceUITests";
+			productName = "Pods-Calendar_Alice-Calendar_AliceUITests";
+			productReference = C1EF3F545D11EDDE6567D62A1D7EE0BF /* Pods_Calendar_Alice_Calendar_AliceUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A3EFB6FE557D2EA6EF79F30A0A8D2594 /* Pods-Calendar_AliceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CC6F12604368D292597DBB8C6B9167 /* Build configuration list for PBXNativeTarget "Pods-Calendar_AliceTests" */;
+			buildPhases = (
+				35A7F784495A5C91DB01E826CF8E1F3B /* Headers */,
+				DD99FA26769B8B2345701C15ACB866DF /* Sources */,
+				203BEED33B9437485355676AC49B6C7C /* Frameworks */,
+				A308978C627C45CA938918963DE31F47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F568669B4DAB9DC030F001AECBC6F91C /* PBXTargetDependency */,
+			);
+			name = "Pods-Calendar_AliceTests";
+			productName = "Pods-Calendar_AliceTests";
+			productReference = 07993BDF68E03ED2735AA9C93641C360 /* Pods_Calendar_AliceTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -239,25 +285,33 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 9AAA5B5C782FE856EEDF7225253888B2 /* Products */;
+			productRefGroup = F01C7004A0201046A71EFB22F6005B49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				25905D9C58C5D5810BD56A75B6ECABD3 /* CalculateCalendarLogic */,
 				34E86CE38C8DB8CAC6CE9169D6CAA25C /* Pods-Calendar_Alice */,
+				55962418B4861F863C5EE92F6305755B /* Pods-Calendar_Alice-Calendar_AliceUITests */,
+				A3EFB6FE557D2EA6EF79F30A0A8D2594 /* Pods-Calendar_AliceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		71D3E9CED42B20F5B4670DDC69257365 /* Resources */ = {
+		A2A6B92ADFDBFF1EFB82BC27A9171AA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA9E017A20D8382A783BCC6F7CC3F873 /* Resources */ = {
+		A308978C627C45CA938918963DE31F47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF25AEAAA4D3934814D1953F3175546A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,39 +321,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		26475D5914060E94589317B47F767648 /* Sources */ = {
+		54BC0621E3548E94DDBB8063B0726114 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15635FD91D970E9B569B96AC270D0A33 /* Pods-Calendar_Alice-dummy.m in Sources */,
+				374BE10F6409F065AA0F5E85F94DA6E4 /* Pods-Calendar_Alice-Calendar_AliceUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		843EEEA7846CFE52213C8F06208F0902 /* Sources */ = {
+		A1C1E03C7CE14FE874F8585DFFCE57B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				387DB977A58D3C372410E50A21AD2757 /* CalculateCalendarLogic-dummy.m in Sources */,
-				007A81C8F3089C7EB5BBC8B09F3B6195 /* CalculateCalendarLogic.swift in Sources */,
+				76FC8A280D9D8B06A2C4C78AD3DF213F /* Pods-Calendar_Alice-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD99FA26769B8B2345701C15ACB866DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36C70C4635099C0255BAD32165362812 /* Pods-Calendar_AliceTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		47F8BDA48E23471CB186E3C85D6BA8B1 /* PBXTargetDependency */ = {
+		F568669B4DAB9DC030F001AECBC6F91C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CalculateCalendarLogic;
-			target = 25905D9C58C5D5810BD56A75B6ECABD3 /* CalculateCalendarLogic */;
-			targetProxy = 94844D4F6DD03938789789A36FC1D219 /* PBXContainerItemProxy */;
+			name = "Pods-Calendar_Alice";
+			target = 34E86CE38C8DB8CAC6CE9169D6CAA25C /* Pods-Calendar_Alice */;
+			targetProxy = 640083B31114C4C906479A5E875A9FC6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07C3A51992365EE0E0283CF003216177 /* Debug */ = {
+		27A4DF41ADE0B23B2E77FECB189654D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9BA8200D34360EAD660251AEDF7693F /* CalculateCalendarLogic.xcconfig */;
+			baseConfigurationReference = 5E74763D4B1FA583390E5EF1C355BC72 /* Pods-Calendar_Alice-Calendar_AliceUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -309,91 +372,71 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CalculateCalendarLogic/CalculateCalendarLogic-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CalculateCalendarLogic/CalculateCalendarLogic-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Calendar_Alice-Calendar_AliceUITests/Pods-Calendar_Alice-Calendar_AliceUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/CalculateCalendarLogic/CalculateCalendarLogic.modulemap";
-				PRODUCT_MODULE_NAME = CalculateCalendarLogic;
-				PRODUCT_NAME = CalculateCalendarLogic;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Calendar_Alice-Calendar_AliceUITests/Pods-Calendar_Alice-Calendar_AliceUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
+		39D80F4E6BE9865B652793A6D87328D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 169F7F30EABD836205B38267BC11D318 /* Pods-Calendar_AliceTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Calendar_AliceTests/Pods-Calendar_AliceTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Calendar_AliceTests/Pods-Calendar_AliceTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		2C228B6DE27D888FAFF04C37D976C836 /* Debug */ = {
+		7699365A5B6B0B0A8B81CFD3961BB03C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D880503EBD6EA796FDDF41649134CF6E /* Pods-Calendar_Alice.debug.xcconfig */;
+			baseConfigurationReference = 95D69DCFA0B72E7BAFDA00EDD3C904A3 /* Pods-Calendar_Alice.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -408,7 +451,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Calendar_Alice/Pods-Calendar_Alice-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,82 +472,7 @@
 			};
 			name = Debug;
 		};
-		86CF407EEAF6BB9F5E89A9DF079401B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9BA8200D34360EAD660251AEDF7693F /* CalculateCalendarLogic.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CalculateCalendarLogic/CalculateCalendarLogic-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CalculateCalendarLogic/CalculateCalendarLogic-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CalculateCalendarLogic/CalculateCalendarLogic.modulemap";
-				PRODUCT_MODULE_NAME = CalculateCalendarLogic;
-				PRODUCT_NAME = CalculateCalendarLogic;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CBDABE789ECAEA8093C035E2ADAB466F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CECBE5FC2A4739BDB3C605A939E1421C /* Pods-Calendar_Alice.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Calendar_Alice/Pods-Calendar_Alice-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Calendar_Alice/Pods-Calendar_Alice.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -555,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -568,32 +536,217 @@
 			};
 			name = Debug;
 		};
+		9B75F5C29CB384DF1E9183E59892FE18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A9EA94BFD1207B5E782F39668ABE26F /* Pods-Calendar_AliceTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Calendar_AliceTests/Pods-Calendar_AliceTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Calendar_AliceTests/Pods-Calendar_AliceTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D35BFAB21EE368B945EF4363551AB7A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66379AE7178CAB459C95F8EC34A4134E /* Pods-Calendar_Alice-Calendar_AliceUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Calendar_Alice-Calendar_AliceUITests/Pods-Calendar_Alice-Calendar_AliceUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Calendar_Alice-Calendar_AliceUITests/Pods-Calendar_Alice-Calendar_AliceUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F310EC330D46B0AA32D9A5F6D58ADCDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E09E52D2EFC01BAB813E7BCB3E3C1483 /* Pods-Calendar_Alice.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Calendar_Alice/Pods-Calendar_Alice-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Calendar_Alice/Pods-Calendar_Alice.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00370293058D3CCE67C62E9571BB4358 /* Build configuration list for PBXNativeTarget "Pods-Calendar_Alice" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C228B6DE27D888FAFF04C37D976C836 /* Debug */,
-				CBDABE789ECAEA8093C035E2ADAB466F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
-				1422B121EAEAEA11307496903FA623C6 /* Release */,
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7444CD359A14ECFF905BB0379BFA6812 /* Build configuration list for PBXNativeTarget "CalculateCalendarLogic" */ = {
+		6D1C3779BD167ABD2461DBEE82D3D656 /* Build configuration list for PBXNativeTarget "Pods-Calendar_Alice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07C3A51992365EE0E0283CF003216177 /* Debug */,
-				86CF407EEAF6BB9F5E89A9DF079401B8 /* Release */,
+				7699365A5B6B0B0A8B81CFD3961BB03C /* Debug */,
+				F310EC330D46B0AA32D9A5F6D58ADCDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CC6F12604368D292597DBB8C6B9167 /* Build configuration list for PBXNativeTarget "Pods-Calendar_AliceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B75F5C29CB384DF1E9183E59892FE18 /* Debug */,
+				39D80F4E6BE9865B652793A6D87328D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		985B23F13C305CFE026E5AB7FE200D18 /* Build configuration list for PBXNativeTarget "Pods-Calendar_Alice-Calendar_AliceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27A4DF41ADE0B23B2E77FECB189654D1 /* Debug */,
+				D35BFAB21EE368B945EF4363551AB7A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
