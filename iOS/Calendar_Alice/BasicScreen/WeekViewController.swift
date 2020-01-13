@@ -17,10 +17,11 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
 	let rightNow = Date()
 
 	// 200年間の(年、Month)データ
+	// 200 x 12 = 2400件の月データがこのmonthArr配列に入っている
 	static let monthArr: [(year: Int, month: Int)] = {
 
 		var temp = [(Int, Int)]()
-		(2000..<2030).forEach { (year) in
+		(1900..<2100).forEach { (year) in
 
 			(1..<13).forEach { (month) in
 				temp.append((year, month))
@@ -28,23 +29,29 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
 		}
 		return temp
 	}()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+	// ある年と月をパラメータとして入れるとその年月の日付情報が返される
+	func getMonthDays(monthInfo: (year: Int, month: Int)) -> [(year: Int, month: Int, day: Int)?] {
 
-	func getMonthDays(monthInfo: (year: Int, month: Int)) -> [(month: Int, day: Int)?] {
-
-		var monthDays: [(month: Int, day: Int)?] = []
+		var monthDays: [(year: Int, month: Int, day: Int)?] = []
+		// Date
 		let dateComponents = DateComponents(calendar: calendar, year: monthInfo.year, month: monthInfo.month, day: 1)
 		let composedDate = calendar.date(from: dateComponents)
 
+		// 例えばパラメータ2020/1/1のDateがこんな感じで作られる
+		//     public func date(from components: DateComponents) -> Date?
+
 		guard let startDay = composedDate else { return [] }
 
-        let component = calendar.component(.weekday, from: startDay)
+		// ある月の一日が何番目にあるかindexを取得して0 ~ そのindexまでは先月の日付だからfor文で回してnilをArrayに入れる
+		// nilデータはそのカレンダーに描画されず空白で表示される
+
+		let component = calendar.component(Calendar.Component.weekday, from: startDay)
         let weekday = component - 1 // 
 
 		(0..<weekday).forEach { _ in
@@ -53,22 +60,21 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
 
 		let totalDays = calendar.range(of: .day, in: .month, for: startDay)?.count ?? 0
 		(1..<totalDays+1).forEach { (day) in
-			monthDays.append((monthInfo.month, day))
+			monthDays.append((monthInfo.year, monthInfo.month, day))
 		}
 
+		// nil, nil, nil, (2020, 1, 1), (2020, 1, 2), (2020, 1, 3), ...]
 		return monthDays
 
 	}
     
-// 月表示のカレンダーを２回繰り返し表示する
+	// 月表示のカレンダーを２回繰り返し表示する
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return WeekViewController.monthArr.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		//        ↓　items.countにしたら、itemsで書いたstringが表示される。文字でも数字でもOK。
-		//        return items.count
-		//        ↓ 0〜30までの数字を、順番に31個表示する。
+
 		let yearMonth = WeekViewController.monthArr[section]
 		let monthDays = getMonthDays(monthInfo: yearMonth)
 		return monthDays.count
