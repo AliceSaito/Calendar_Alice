@@ -75,7 +75,8 @@ struct MonthInfo {
     var month: Int
     var day:Int?
 }
-func getMonthDays(monthInfo:(year: Int, month: Int)) -> [(year: Int, month: Int, day: Int)?] {
+
+func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
 
 
 
@@ -85,8 +86,10 @@ func getMonthDays(monthInfo:(year: Int, month: Int)) -> [(year: Int, month: Int,
     // Calendarは、アップルが提供しているFramework。
     let calendar = Calendar.current
 
-// タプルで書くと下記の通り。
-    var dates: [(year: Int, month: Int, day: Int)?] = []
+    var dates: [MonthInfo?] = []
+    
+// 上記をタプルで書くと下記の通り。
+//    var dates: [(year: Int, month: Int, day: Int)?] = []
 
 
     let dateComponents = DateComponents(calendar: calendar, year: monthInfo.year, month: monthInfo.month, day: 1)
@@ -103,7 +106,7 @@ func getMonthDays(monthInfo:(year: Int, month: Int)) -> [(year: Int, month: Int,
 
     let totalDays = calendar.range(of: .day, in: .month, for: startDay)?.count ?? 0
     (1 ..< totalDays + 1).forEach { day in
-        dates.append((monthInfo.year, monthInfo.month, day))
+        dates.append(MonthInfo?)
     }
 
     return dates
