@@ -77,33 +77,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-cb-oFg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="ELl-xp-lt4"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日月火水木金土" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-fP-Pc0">
-                                <rect key="frame" x="0.0" y="108" width="414" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gez-2W-5wl">
-                                <rect key="frame" x="0.0" y="190" width="414" height="473"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gez-2W-5wl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DGI-wB-iaX">
                                     <size key="itemSize" width="57" height="55"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeekCollectionViewCell" id="3fM-fu-i9Y" customClass="WeekCollectionViewCell" customModule="Calendar_Alice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="57" height="55"/>
+                                        <rect key="frame" x="0.0" y="50" width="57" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pHB-jD-oVR">
                                             <rect key="frame" x="0.0" y="0.0" width="57" height="55"/>
@@ -124,6 +109,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderViews" id="EXh-XL-EPw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="zP3-zK-zAn" id="EOM-KH-8UM"/>
                                     <outlet property="delegate" destination="zP3-zK-zAn" id="YU5-jF-zcF"/>
@@ -131,6 +120,13 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EJg-GY-NLM" firstAttribute="bottom" secondItem="Gez-2W-5wl" secondAttribute="bottom" id="Eh0-Wr-uzt"/>
+                            <constraint firstItem="Gez-2W-5wl" firstAttribute="top" secondItem="EJg-GY-NLM" secondAttribute="top" id="TQc-N2-s2A"/>
+                            <constraint firstItem="EJg-GY-NLM" firstAttribute="bottom" secondItem="Gez-2W-5wl" secondAttribute="bottom" id="gXp-LW-ATJ"/>
+                            <constraint firstItem="Gez-2W-5wl" firstAttribute="trailing" secondItem="EJg-GY-NLM" secondAttribute="trailing" id="gk0-z4-ro9"/>
+                            <constraint firstItem="Gez-2W-5wl" firstAttribute="leading" secondItem="EJg-GY-NLM" secondAttribute="leading" id="ts9-pm-olU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EJg-GY-NLM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="PeD-jY-44E"/>

@@ -50,7 +50,7 @@
 
 import UIKit
 
-class WeekViewController: UIViewController {
+class WeekViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
 // 200年間の(年、Month)データ。200 x 12 = 2400件の月データがこのmonthArr配列に入っている。
 //staticが付いていると、別のクラスでも、クラス名.monthArrで直接呼び出せる
@@ -158,13 +158,15 @@ func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
         return cell
         }
     
-    
+    //セルをタップした時に呼び出されるファンクション。これを使って予定表を作る。
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
     }
     
+    //headerを設定するための戻り値を設定。
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
+        //年月を表示するためのheaderを設定。
         var headerView = UICollectionReusableView()
         let width = self.view.frame.width
         headerView.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
@@ -174,6 +176,7 @@ func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
         }
         let yearMonth = WeekViewController.monthArr[indexPath.section]
 
+        //headerの上に年月を表示するラベルを作成。
         let label = UILabel()
         label.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
         label.textAlignment = .center
