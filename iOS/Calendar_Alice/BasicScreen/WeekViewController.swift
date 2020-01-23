@@ -6,12 +6,10 @@
 //  Copyright © 2019 斉藤 アリス. All rights reserved.
 //
 
-/// 下記はDateComponentsの練習用コード
-// class WeekViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
+
+
+
+// 下記はDateComponentsの練習用コード
 //        // Dateオブジェクトを操作するクラス
 //        let calendar = Calendar(identifier: .gregorian)
 //        // 今月の１日
@@ -52,22 +50,29 @@
 
 import UIKit
 
-let monthArr: [(year: Int, month: Int)] = {
-    // 200年間(年、Month)のカレンダー
-    var temp = [(Int, Int)]()
+class WeekViewController: UIViewController {
+    
+// 200年間の(年、Month)データ。200 x 12 = 2400件の月データがこのmonthArr配列に入っている。
+//staticが付いていると、別のクラスでも、クラス名.monthArrで直接呼び出せる
+static let monthArr: [MonthInfo] = {
+    
+    // 200年間
+    var temp = [MonthInfo]()
     (1900 ..< 2100).forEach { year in
         // １年は12ヶ月
         (1 ..< 13).forEach { month in
-            temp.append((year, month))
+            let monthInfo = MonthInfo.init(year: year, month: month, day: nil)
+            temp.append(monthInfo)
         }
     }
     return temp
 }()
 
+//★下記は年間カレンダーで使用する部分。あとで書く。
 // $0はクロージャー。Arrayで使う時は全ての要素にアクセスするという意味。
-func groupForYearArr() -> [Int] {
-    return (1900 ..< 2100).map({ $0 })
-}
+//func groupForYearArr() -> [Int] {
+//    return (1900 ..< 2100).map({ $0 })
+//}
 
 
 struct MonthInfo {
@@ -76,110 +81,107 @@ struct MonthInfo {
     var day:Int?
 }
 
+//年と月をパラメータとして入れると、その年月の日付情報が返される
 func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
 
-
-
-// getMonthDaysをタプルで書くと下記の通り。略式はfunc getMonthDays(monthInfo: (Int,Int))。
+// func getMonthDaysをタプルで書くと下記の通り。
+//略式はfunc getMonthDays(monthInfo: (Int,Int))。
 //func getMonthDays(monthInfo:(year: Int, month: Int)) -> [(year: Int, month: Int, day: Int)?] {
 
     // Calendarは、アップルが提供しているFramework。
     let calendar = Calendar.current
 
     var dates: [MonthInfo?] = []
-    
+//    上記を略さずに書くと下記の通り
+//    var dates: Array<MonthInfo?> = []
 // 上記をタプルで書くと下記の通り。
 //    var dates: [(year: Int, month: Int, day: Int)?] = []
 
-
+//DateComponentsの定義
     let dateComponents = DateComponents(calendar: calendar, year: monthInfo.year, month: monthInfo.month, day: 1)
-    let composedDate = calendar.date(from: dateComponents)
+ 
+//カレンダー形式に変換
+    let startDay = calendar.date(from: dateComponents)!
 
-    guard let startDay = composedDate else { return [] }
-
-    let component = calendar.component(.weekday, from: startDay)
+// !でunwrapをしない時はguardかifでOptional Binding
+// guard let startDay = composedDate else { return [] }
+//if let startDay = composedDate {}
+    
+    // 月の１日目の曜日を特定する。for文で回して１日より前のマスにnilを入れる。
+    let component = calendar.component(Calendar.Component.weekday, from: startDay)
     let weekday = component - 1
 
     (0 ..< weekday).forEach { _ in
         dates.append(nil)
     }
 
+//CollectionViewのCell(7×5)に順番に数字を入れていく
     let totalDays = calendar.range(of: .day, in: .month, for: startDay)?.count ?? 0
     (1 ..< totalDays + 1).forEach { day in
-        dates.append(MonthInfo?)
+         let data = MonthInfo.init(year: monthInfo.year, month: monthInfo.month, day: day)
+        // data.year
+        // print(data.year)
+        dates.append(data)
     }
-
     return dates
+    // nil, nil, nil, (2020, 1, 1), (2020, 1, 2), (2020, 1, 3), ...
 }
+    
 
-class MonthViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    @IBOutlet var collectionView: UICollectionView!
-
-    private let calendar = Calendar.current
-    private let rightNow = Date()
-    private let today: (year: Int, month: Int, day: Int)? = {
-        let today = Date()
-        let yearInterval = Calendar.current.dateInterval(of: .year, for: today)!
-        let monthInterval = Calendar.current.dateInterval(of: .month, for: today)!
-        let dayInterval = Calendar.current.dateInterval(of: .day, for: today)!
-
-        guard let year = Calendar.current.dateComponents([.year], from: yearInterval.start).year,
-            let month = Calendar.current.dateComponents([.month], from: monthInterval.start).month,
-            let day = Calendar.current.dateComponents([.day], from: dayInterval.start).day
-        else {
-            return nil
-        }
-
-        return (year, month, day)
-    }()
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        scrollToDate()
-    }
-
-    private func scrollToDate(date: Date = Date()) {
-        let yearInterval = calendar.dateInterval(of: .year, for: date)!
-        let monthInterval = calendar.dateInterval(of: .month, for: date)!
-        guard let year = calendar.dateComponents([.year], from: yearInterval.start).year,
-            let month = calendar.dateComponents([.month], from: monthInterval.start).month
-        else { return }
-
-        let yearMonth = (year, month)
-
-        for (section, value) in monthArr.enumerated() {
-            if yearMonth == value {
-                let indexPath = IndexPath(row: 0, section: section)
-                collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.top, animated: false)
-                return
-            }
-        }
-    }
-
-    // 月表示のカレンダーを２回繰り返し表示する
+    // 月表示のカレンダーを繰り返し表示する
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return WeekViewController.monthArr.count
     }
-
+    
+//全データを取得。2400月データがmonthArr配列に入っている。
+//numberOfItemsInSectionは外部パラメーター（ラベル）
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        ↓　items.countにしたら、itemsで書いたstringが表示される。文字でも数字でもOK。
-//        return items.count
-//        ↓ 0〜30までの数字を、順番に31個表示する。
-        return 31
+        let yearMonth = WeekViewController.monthArr[section]
+        let monthDays = getMonthDays(monthInfo: yearMonth)
+        return monthDays.count
     }
 
+    //空のcellを用意する。storyboardで作った"WeekCollectionViewCell"と紐付ける。
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeekCollectionViewCell", for: indexPath) as! WeekCollectionViewCell
-
-//        cell.myLabel.text = items[indexPath.item]
         print(indexPath)
-        // indexPathは、itemとsectionと一緒に使う。itemは月表示のカレンダー、sectionはその繰り返しの回数。
-        cell.myLabel.text = "\(indexPath.section + 1)-\(indexPath.item + 1)"
-        return cell
+        
+        // rowは一日ごとのマス(普通はitemと書く)。sectionは月単位のカレンダー。indexPathは、rowとsectionと一緒に使う。
+        //myLabelはstoryboardで、私が決めたセルの名前。
+        let yearMonth = WeekViewController.monthArr[indexPath.section]
+        if let day = getMonthDays(monthInfo: yearMonth)[indexPath.item] {
+            cell.myLabel.text = "\(day.day!)"
+        } else {
+            //値のない場合は、セルは空欄にする。
+            cell.myLabel.text = ""
     }
-
+        return cell
+        }
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        var headerView = UICollectionReusableView()
+        let width = self.view.frame.width
+        headerView.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
+        headerView.backgroundColor = UIColor.green
+        if kind == UICollectionView.elementKindSectionHeader {
+            headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderViews", for: indexPath)
+        }
+        let yearMonth = WeekViewController.monthArr[indexPath.section]
+
+        let label = UILabel()
+        label.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
+        label.textAlignment = .center
+        label.text = "\(yearMonth.year)/ \(yearMonth.month)"
+        _ = headerView.subviews.map({ $0.removeFromSuperview() })
+        headerView.addSubview(label)
+        return headerView
+
+    }
+
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tdP-2X-tAN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tdP-2X-tAN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Title-->
         <scene sceneID="p63-R4-r7a">
             <objects>
-                <viewController id="pSA-G2-9UN" customClass="YearViewController" customModule="Calender_Alice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pSA-G2-9UN" customClass="YearViewController" customModule="Calendar_Alice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iFg-bG-OSY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
         <!--Item-->
         <scene sceneID="F81-fU-vUR">
             <objects>
-                <viewController id="zP3-zK-zAn" customClass="WeekViewController" customModule="Calender_Alice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zP3-zK-zAn" customClass="WeekViewController" customModule="Calendar_Alice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="98P-Wg-mhs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeekCollectionViewCell" id="3fM-fu-i9Y" customClass="WeekCollectionViewCell" customModule="Calender_Alice" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeekCollectionViewCell" id="3fM-fu-i9Y" customClass="WeekCollectionViewCell" customModule="Calendar_Alice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pHB-jD-oVR">
@@ -138,12 +138,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jm1-uD-U4i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="412"/>
+            <point key="canvasLocation" x="-39.130434782608695" y="411.83035714285711"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="XaM-XO-hzZ">
             <objects>
-                <viewController id="QCN-FJ-yKT" customClass="DayViewController" customModule="Calender_Alice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QCN-FJ-yKT" customClass="DayViewController" customModule="Calendar_Alice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8P0-iP-79t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
