@@ -127,6 +127,40 @@ func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
     // nil, nil, nil, (2020, 1, 1), (2020, 1, 2), (2020, 1, 3), ...
 }
     
+    
+    
+    ///宿題の部分。yearMonthをmonthInfoに変える。tupleを使わない。
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        scrollToDate()
+    }
+
+
+
+    private func scrollToDate(date: Date = Date()) {
+
+        let yearInterval = calendar.dateInterval(of: .year, for: date)!
+        let monthInterval = calendar.dateInterval(of: .month, for: date)!
+        guard let year = calendar.dateComponents([.year], from: yearInterval.start).year,
+            let month = calendar.dateComponents([.month], from: monthInterval.start).month
+        else { return }
+
+        let yearMonth = (year, month)
+
+        for (section, value) in monthArr.enumerated() {
+            if yearMonth == value {
+
+                let indexPath = IndexPath.init(row: 0, section: section)
+                collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.top, animated: false)
+                return
+            }
+        }
+    }
+    
+    
+    
+    
 
     // 月表示のカレンダーを繰り返し表示する
     func numberOfSections(in collectionView: UICollectionView) -> Int {
