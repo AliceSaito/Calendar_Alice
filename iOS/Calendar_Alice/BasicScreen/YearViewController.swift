@@ -13,6 +13,9 @@ class YearViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //APIを呼び出せるか確認するためのコード
+        var api = ApiClass()
+        api.holiday()
         // Do any additional setup after loading the view.
     }
     
@@ -28,3 +31,5 @@ class YearViewController: UIViewController {
     */
 
 }
+
+
