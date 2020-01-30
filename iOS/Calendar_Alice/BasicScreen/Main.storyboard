@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tdP-2X-tAN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tdP-2X-tAN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -270,8 +270,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="EVENT"/>
                                 <connections>
-                                    <action selector="btnAddEvent:" destination="K3G-Sp-QzM" eventType="touchUpInside" id="Vrp-tB-Ugw"/>
-                                    <action selector="btnAddEvent:" destination="Dha-4S-2Tb" eventType="touchUpInside" id="nMh-B0-L3f"/>
+                                    <action selector="btnAdd:" destination="K3G-Sp-QzM" eventType="touchUpInside" id="rgx-ZS-0sJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -281,7 +280,6 @@
                     <navigationItem key="navigationItem" id="bsj-tx-5Cz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZ2-CV-7mR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Dha-4S-2Tb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="1204.6875"/>
         </scene>
