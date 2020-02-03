@@ -30,7 +30,7 @@ class AddScheduleViewCotroller: UIViewController {
         
         
         
-        
+//        iPhoneに最初から入っているアプリを使うときのコードだから使えない
 //        let eventStore:EKEventStore = EKEventStore()
 //        eventStore.requestAccess(to: .event, completion:{(granted, error) in
 //

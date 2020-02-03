@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tdP-2X-tAN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tdP-2X-tAN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -106,6 +106,7 @@
                                         <size key="customSize" width="57" height="55"/>
                                         <connections>
                                             <outlet property="myLabel" destination="VEv-I1-RiL" id="PvM-NF-xPH"/>
+                                            <segue destination="K3G-Sp-QzM" kind="show" id="tkK-eN-86g"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -204,18 +205,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJg-GY-NLM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nh2-Sx-4EH">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="mzb-uo-fYY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rsN-UV-1ad">
-                                <rect key="frame" x="343" y="7" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="K3G-Sp-QzM" kind="showDetail" id="8hX-FK-Rwi"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Nh2-Sx-4EH"/>
                     <connections>
                         <outlet property="collectionView" destination="Gez-2W-5wl" id="cjh-nb-eTg"/>
                     </connections>
@@ -262,7 +252,7 @@
             <objects>
                 <viewController id="K3G-Sp-QzM" customClass="AddScheduleViewCotroller" customModule="Calendar_Alice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="adC-Wa-cnq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5j-o6-24M">
