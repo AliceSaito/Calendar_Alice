@@ -1,0 +1,15 @@
+//
+//  ScheduleItemCell.swift
+//  Calendar_Alice
+//
+//  Created by 斉藤アリス on 2020/02/03.
+//  Copyright © 2020 斉藤 アリス. All rights reserved.
+//
+
+import UIKit
+
+class ScheduleItemCell: UITableViewCell {
+
+    
+    @IBOutlet weak var ItemLabel: UILabel!
+}

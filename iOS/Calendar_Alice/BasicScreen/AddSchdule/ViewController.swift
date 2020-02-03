@@ -26,6 +26,11 @@ class ViewController: UIViewController {
         let note = appDelegate.dataController.createNote()
         note.title = "test"
         note.date = Date()
+        note.address = "渋谷区恵比寿西"
+        note.memo = "memo"
+        note.url = "https://tokosie.jp/"
+        
+            
 //        saveContextというfuncで保存する。
         appDelegate.dataController.saveContext()
     }
