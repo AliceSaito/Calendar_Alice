@@ -26,7 +26,7 @@ class ScheduleListViewCotroller: UIViewController {
         appDelegate.dataController.saveContext()
     }
     
-    
+    //
     private func fetchNotes() -> [Note]{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return []

@@ -9,23 +9,30 @@
 import UIKit
 
 class AddSheduleViewController: UITableViewController {
+    
+    
+    @IBOutlet weak var datePickerTextField: UITextField!
+    
+    private var datePicker: UIDatePicker?
+    
     override func viewDidLoad(){
         super.viewDidLoad()
-    }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddScheduleItem", for: indexPath)
         
-        if let label = cell.viewWithTag(30) as? UILabel {
-            if indexPath.row == 0 {
-                label.text = "Go to Party"
-            } else {
-                label.text = "ERROR"
-            }
-        }
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(ViewController.dateChanged(datePicker:)), for: .valueChanged)
         
-        return cell
+        datePickerTextField.inputView = datePicker
+        
+        
+        
     }
+    
+    @objc func cateChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        DateFormatter.dateFormat = "yyyy/MM/dd"
+        
+        input TextField.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+}
 }

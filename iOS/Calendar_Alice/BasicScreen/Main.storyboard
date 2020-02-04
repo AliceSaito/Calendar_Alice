@@ -322,13 +322,24 @@
                     <view key="view" contentMode="scaleToFill" id="7DM-8c-Mfc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kW4-fe-nil">
+                                <rect key="frame" x="38" y="378" width="346" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hnO-9O-Di4"/>
                     </view>
+                    <connections>
+                        <outlet property="datePickerTextField" destination="kW4-fe-nil" id="H3c-ER-4fq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJI-hp-Sen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="1214"/>
+            <point key="canvasLocation" x="873.91304347826099" y="1213.3928571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6Vq-6v-ynU">
