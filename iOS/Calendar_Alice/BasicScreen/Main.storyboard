@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="1650.7246376811595" y="411.83035714285711"/>
         </scene>
-        <!--Add Schedule View Cotroller-->
+        <!--Schedule List View Cotroller-->
         <scene sceneID="YHS-9N-0rd">
             <objects>
-                <viewController id="K3G-Sp-QzM" customClass="AddScheduleViewCotroller" customModule="Calendar_Alice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K3G-Sp-QzM" customClass="ScheduleListViewCotroller" customModule="Calendar_Alice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="adC-Wa-cnq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,14 +265,14 @@
                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" tag="30" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddScheduleItem" id="8hG-iM-ArX">
+                                    <tableViewCell clipsSubviews="YES" tag="30" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddScheduleItem" id="8hG-iM-ArX" customClass="ScheduleItemCell" customModule="Calendar_Alice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="105" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8hG-iM-ArX" id="YX1-vz-Rw8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ixa-zQ-5QO">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ItemLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ixa-zQ-5QO">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -281,6 +281,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ItemLabel" destination="ixa-zQ-5QO" id="TqV-wI-PBS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -288,14 +291,36 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="M29-OZ-H54"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bsj-tx-5Cz"/>
-                    <connections>
-                        <outlet property="ItemLabel" destination="ixa-zQ-5QO" id="S8b-Ew-Mcs"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="bsj-tx-5Cz">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="A68-Wj-yFd">
+                                <connections>
+                                    <segue destination="JZw-aQ-aUB" kind="showDetail" id="e2r-fA-Uxi"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="61I-Rv-FX1"/>
+                            <barButtonItem systemItem="organize" id="jjo-07-Mum"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZ2-CV-7mR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="1204.6875"/>
+        </scene>
+        <!--Add Schedule View Cotroller-->
+        <scene sceneID="o7C-z7-Y9U">
+            <objects>
+                <viewController id="JZw-aQ-aUB" customClass="AddScheduleViewCotroller" customModule="Calendar_Alice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7DM-8c-Mfc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hnO-9O-Di4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJI-hp-Sen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="1214"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6Vq-6v-ynU">
