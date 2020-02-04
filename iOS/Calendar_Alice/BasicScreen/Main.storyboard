@@ -286,6 +286,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="K3G-Sp-QzM" id="Kp3-eT-SD8"/>
+                                    <outlet property="delegate" destination="K3G-Sp-QzM" id="GLF-qL-8hu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -299,7 +303,11 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="search" id="61I-Rv-FX1"/>
-                            <barButtonItem systemItem="organize" id="jjo-07-Mum"/>
+                            <barButtonItem systemItem="organize" id="jjo-07-Mum">
+                                <connections>
+                                    <action selector="addDummyData:" destination="K3G-Sp-QzM" id="6Bm-w2-4gz"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
