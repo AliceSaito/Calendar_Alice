@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddSheduleViewController: UITableViewController {
+class AddScheduleViewController: UITableViewController {
     
     
     
@@ -22,7 +22,7 @@ class AddSheduleViewController: UITableViewController {
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(AddSheduleViewController.dateChanged(datePicker:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(AddScheduleViewController.dateChanged(datePicker:)), for: .valueChanged)
         
         datePickerTextField.inputView = datePicker
         
