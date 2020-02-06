@@ -11,7 +11,9 @@ import UIKit
 class AddSheduleViewController: UITableViewController {
     
     
+    
     @IBOutlet weak var datePickerTextField: UITextField!
+    
     
     private var datePicker: UIDatePicker?
     
@@ -20,7 +22,7 @@ class AddSheduleViewController: UITableViewController {
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(ViewController.dateChanged(datePicker:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(AddSheduleViewController.dateChanged(datePicker:)), for: .valueChanged)
         
         datePickerTextField.inputView = datePicker
         
@@ -28,11 +30,11 @@ class AddSheduleViewController: UITableViewController {
         
     }
     
-    @objc func cateChanged(datePicker: UIDatePicker){
+    @objc func dateChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
-        DateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "yyyy/MM/dd"
         
-        input TextField.text = dateFormatter.string(from: datePicker.date)
+        datePickerTextField.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
-}
+    }
 }
