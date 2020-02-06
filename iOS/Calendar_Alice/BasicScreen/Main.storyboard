@@ -323,6 +323,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="apt-h1-tvT">
+                            <rect key="frame" x="0.0" y="256" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="SAVE"/>
+                            <connections>
+                                <action selector="scheduleSaveButton:" destination="1nr-cH-mdU" eventType="touchUpInside" id="RIl-82-ME1"/>
+                            </connections>
+                        </button>
                         <sections>
                             <tableViewSection id="fvc-UY-kEX">
                                 <cells>
@@ -486,6 +494,10 @@
                     </tableView>
                     <connections>
                         <outlet property="datePickerTextField" destination="3AL-OJ-uJf" id="tJJ-ns-49J"/>
+                        <outlet property="memoTextField" destination="KGs-SH-hKV" id="JBy-Y4-Kqn"/>
+                        <outlet property="placeTextField" destination="fbP-sv-Afp" id="Q3M-tk-bvz"/>
+                        <outlet property="titleTextField" destination="U7D-5q-gjs" id="OrG-JI-M37"/>
+                        <outlet property="urlTextField" destination="MtA-7I-0jp" id="hZg-Bs-FWS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQS-jT-6Ru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
