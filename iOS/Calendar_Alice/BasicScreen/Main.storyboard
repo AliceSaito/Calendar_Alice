@@ -310,6 +310,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="J5u-Ue-Oqi" id="bZR-s2-MrA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZ2-CV-7mR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,6 +330,9 @@
                             <rect key="frame" x="0.0" y="256" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="SAVE"/>
+                            <connections>
+                                <action selector="scheduleSaveButton:" destination="1nr-cH-mdU" eventType="touchUpInside" id="jVY-kI-AZx"/>
+                            </connections>
                         </button>
                         <sections>
                             <tableViewSection id="fvc-UY-kEX">

@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ScheduleListViewCotroller: UIViewController {
+class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDelegate {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+
+    
     //一覧ボタンと繋げた
     @IBAction func addDummyData(_ sender: UIBarButtonItem) {
         //appDelegateを参照できるインスタンスを取得
@@ -41,8 +46,22 @@ class ScheduleListViewCotroller: UIViewController {
         let notes = fetchNotes()
         print("notes >> \(notes.count)")
         print("notes >> \(notes)")
-
+        
     }
+    
+    //segueの繋ぎ先がAddScheduleViewController。それをself(ScheduleListViewCotroller)に伝えて処理するよ(delegate)。
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddScheduleViewController
+        vc.delegate = self
+
+        
+    }
+    //保存したものを一覧に表示。
+    func didSaveNewSchedule() {
+        tableView.reloadData()
+        
+    }
+    
 }
 
 //tableViewの一つのセクションの中に、何個の項目を表示させるか。numberOfRowsInSectionはfunc。
@@ -58,3 +77,5 @@ extension ScheduleListViewCotroller : UITableViewDelegate, UITableViewDataSource
         return cell
     }
 }
+
+
