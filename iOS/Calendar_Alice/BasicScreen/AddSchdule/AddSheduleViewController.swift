@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddScheduleViewControllerDelegate {
+    func didSaveNewSchedule()
+}
+
 class AddScheduleViewController: UITableViewController {
     
     
@@ -21,7 +25,7 @@ class AddScheduleViewController: UITableViewController {
     
     @IBOutlet weak var memoTextField: UITextField!
     
-    
+    var delegate: AddScheduleViewControllerDelegate?
     private var datePicker: UIDatePicker?
     
     override func viewDidLoad(){
@@ -43,61 +47,26 @@ class AddScheduleViewController: UITableViewController {
     }
     
     
-    //ココから
-
-        @IBAction func AddData(_ sender: Any) {
-            print("テスト")
-            
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-              return
-            }
-    //        creatNoteというfancを呼び出し、noteというentityを変数noteに入れて、titleとscheduleに値を入れる。
-            let note = appDelegate.dataController.createNote()
-            note.title = "test"
-            note.date = Date()
-            note.address = "渋谷区恵比寿西"
-            note.memo = "memo"
-            note.url = "https://tokosie.jp/"
-            
-                
-    //        saveContextというfuncで保存する。
-            appDelegate.dataController.saveContext()
-        }
-        
-    //    保存されたデータがコンソルに出力される。
-        @IBAction func FetchNote(_ sender: Any) {
-            
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-              return
-            }
-            let fetched = appDelegate.dataController.fetchNotes()
-            fetched.forEach {
-                let note = $0
-                print(note.title!)
-            }
-            
-            let notes = appDelegate.dataController.fetchNote(value:"test")
-            notes.forEach {
-                let note = $0
-                print(note.title!)
-            }
-            
-        }
-    
-    
-    
-    
-    
-    //ココまで
-    
-    
     @IBAction func scheduleSaveButton(_ sender: Any) {
+        //アンラップ。appDelegateの中にあるdataControllerを下のコードで使いたいから、appDelegateをアンラップするためのguard文。if文でもOK。
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        //creatNoteというfancを呼び出す。noteというentityを変数noteに入れて、titleなどに値を入れる。
+        let note = appDelegate.dataController.createNote()
+        note.title = titleTextField.text
+        note.date = datePicker?.date
+        note.address = placeTextField.text
+        note.memo = memoTextField.text
+        note.url = urlTextField.text
+        
+        
+        //saveContextというfuncで、書いた内容を保存する。
+        appDelegate.dataController.saveContext()
+        delegate?.didSaveNewSchedule()
+        //保存したら編集画面を閉じる
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
     
 }
 

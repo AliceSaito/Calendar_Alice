@@ -327,9 +327,6 @@
                             <rect key="frame" x="0.0" y="256" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="SAVE"/>
-                            <connections>
-                                <action selector="scheduleSaveButton:" destination="1nr-cH-mdU" eventType="touchUpInside" id="RIl-82-ME1"/>
-                            </connections>
                         </button>
                         <sections>
                             <tableViewSection id="fvc-UY-kEX">
@@ -517,47 +514,11 @@
                         <segue destination="pSA-G2-9UN" kind="relationship" relationship="viewControllers" id="bEZ-x4-bUk"/>
                         <segue destination="thg-iy-H0j" kind="relationship" relationship="viewControllers" id="5Sm-F5-1cK"/>
                         <segue destination="QCN-FJ-yKT" kind="relationship" relationship="viewControllers" id="kyK-0A-3SX"/>
-                        <segue destination="HBV-x9-0qF" kind="relationship" relationship="viewControllers" id="KQZ-Gj-iq8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="We1-ZN-BYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-68" y="-566"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Ut6-Cq-EXK">
-            <objects>
-                <viewController id="NYW-nO-oed" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SPd-Eu-eQe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="YbS-zS-j1o"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Fg4-Bc-Vk8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oAn-P9-rKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1817" y="-571"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="ly0-eI-9KL">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HBV-x9-0qF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="aza-mA-pqU"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RY1-pc-D2g">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="NYW-nO-oed" kind="relationship" relationship="rootViewController" id="ciu-1k-S6J"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pKl-HA-lDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1006" y="-571"/>
         </scene>
         <!--Item-->
         <scene sceneID="ZRw-M5-I0P">
