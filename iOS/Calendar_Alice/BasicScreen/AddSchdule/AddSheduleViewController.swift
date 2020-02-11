@@ -61,6 +61,7 @@ class AddScheduleViewController: UITableViewController {
         
         //saveContextというfuncで、書いた内容を保存する。
         appDelegate.dataController.saveContext()
+        //delegateを使って、SheduleListViewControllerに通知する。
         delegate?.didSaveNewSchedule()
         //保存したら編集画面を閉じる
         self.dismiss(animated: true, completion: nil)

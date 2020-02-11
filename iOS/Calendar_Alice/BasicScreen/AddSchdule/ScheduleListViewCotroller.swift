@@ -13,25 +13,6 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
     
     @IBOutlet weak var tableView: UITableView!
 
-    
-    //一覧ボタンと繋げた
-    @IBAction func addDummyData(_ sender: UIBarButtonItem) {
-        //appDelegateを参照できるインスタンスを取得
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        //
-        let note = appDelegate.dataController.createNote()
-        note.title = "test"
-        note.date = Date()
-        note.address = "渋谷区恵比寿西"
-        note.memo = "memo"
-        note.url = "https://tokosie.jp/"
-        //    saveContextというfuncで保存する。
-        appDelegate.dataController.saveContext()
-    }
-    
-    //
     private func fetchNotes() -> [Note]{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return []
@@ -52,11 +33,12 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
     //segueの繋ぎ先がAddScheduleViewController。それをself(ScheduleListViewCotroller)に伝えて処理するよ(delegate)。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AddScheduleViewController
+        //selfはScheduleListViewCotrollerのこと
         vc.delegate = self
 
         
     }
-    //保存したものを一覧に表示。
+    //AddScheduleViewControlllerに新しいスケジュールが書かれた時、一覧を最新版にリロードする。
     func didSaveNewSchedule() {
         tableView.reloadData()
         
