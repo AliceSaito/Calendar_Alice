@@ -70,6 +70,14 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
         return temp
     }()
     
+//    プラスしたコード2月13日
+    func groupForYearArr() -> [Int] {
+        return (1900..<2100).map({ $0 })
+    }
+    
+    
+    
+    
     //★下記は年間カレンダーで使用する部分。あとで書く。
     // $0はクロージャー。Arrayで使う時は全ての要素にアクセスするという意味。
     //func groupForYearArr() -> [Int] {
@@ -178,6 +186,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //空のcellを用意する。storyboardで作った"WeekCollectionViewCell"と紐付ける。
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeekCollectionViewCell", for: indexPath) as! WeekCollectionViewCell
         print(indexPath)
         
