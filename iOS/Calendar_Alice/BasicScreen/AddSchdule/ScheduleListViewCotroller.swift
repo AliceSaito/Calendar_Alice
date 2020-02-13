@@ -33,7 +33,7 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
     //segueの繋ぎ先がAddScheduleViewController。それをself(ScheduleListViewCotroller)に伝えて処理するよ(delegate)。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AddScheduleViewController
-        //selfはScheduleListViewCotrollerのこと
+//selfはScheduleListViewCotrollerのこと。vcはインスタンス。delegateはvcがもっているプロパティ。そこにself:自分自身を代入。
         vc.delegate = self
 
         

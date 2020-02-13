@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// delegateのもっているオブジェクトのうち、必要なものだけ選べるようにするためのprotocol
+// delegateのもっているオブジェクトのうち、必要なものだけ選べるようにするためのprotocolの定義。
 protocol AddScheduleViewControllerDelegate {
     func didSaveNewSchedule()
 }
@@ -21,7 +21,7 @@ class AddScheduleViewController: UITableViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var memoTextField: UITextField!
     
-    //スケジュール一覧を保存するための変数delegate
+    //スケジュール一覧を保存するための変数delegate。 AddScheduleViewControllerDelegate?というプロトコル型。
     var delegate: AddScheduleViewControllerDelegate?
     
     private var datePicker: UIDatePicker?
