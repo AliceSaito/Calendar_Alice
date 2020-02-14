@@ -10,16 +10,16 @@ import UIKit
 
 class MonthMiniCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var miniMonthCollectionView: MonthMiniCollectionView!
+    @IBOutlet weak var miniMonthMiniCollectionView: MonthMiniCollectionView!
     var monthInfo: [(year: Int, month: Int, day: Int)?] = []
 
     func setData(monthInfo: [(year: Int, month: Int, day: Int)?]) {
         self.monthInfo = monthInfo
 
-        self.miniMonthCollectionView.performBatchUpdates({
+        self.miniMonthMiniCollectionView.performBatchUpdates({
             self.monthInfo = monthInfo
         }) { (_) in
-            self.miniMonthCollectionView.reloadData()
+            self.miniMonthMiniCollectionView.reloadData()
         }
         // FIXME: もう一回りロードしないとデータがめっちゃくちゃになる
 //        self.miniMonthCollectionView.reloadData()
