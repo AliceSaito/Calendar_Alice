@@ -63,7 +63,10 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthMiniCollectionViewCell", for: indexPath) as! MonthMiniCollectionViewCell
         let year = self.years[indexPath.section]
         let month = indexPath.row + 1
-        let date = getMonthDays(monthInfo: (year, month))
+        
+        var monthInfo = MonthInfo.init(year: year, month: month, day: nil)
+        
+        let date = getMonthDays(monthInfo: monthInfo )
 
         (cell as? MonthMiniCollectionViewCell)?.setData(monthInfo: date)
 

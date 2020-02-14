@@ -7,50 +7,69 @@
 //
 
 
-
-// 下記はDateComponentsの練習用コード
-//        // Dateオブジェクトを操作するクラス
-//        let calendar = Calendar(identifier: .gregorian)
-//        // 今月の１日
-//        let thisMonthDate = calendar.date(from: DateComponents(year: 2020, month: 1, day: 1, hour: 0, minute: 0, second: 0, nanosecond: 0))
-//        //来月の１日
-//        let nextMonthDate = calendar.date(byAdding: DateComponents(month:1), to: thisMonthDate!)
-//
-//        //今月の最後の日
-//        let thisMonthLastDate = calendar.date(byAdding: DateComponents(day:-1), to: nextMonthDate!)
-//
-//        //曜日を出す。
-//        let thisMonthFirstWeekDay = calendar.component(.weekday, from: thisMonthDate!)
-//
-//        //前月の最後の週を知りたいので、今月の１日を引くために−１。
-//        let firstDate = calendar.date(byAdding: DateComponents(day: -1 * (thisMonthFirstWeekDay - 1)), to: thisMonthDate!)
-//
-//
-//         let thisMonthLastWeekDay = calendar.component(.weekday, from: thisMonthLastDate!)
-//
-//        //今月のカレンダーの最後の日がわかる
-//        let lastDate = calendar.date(byAdding: DateComponents(day:  (7-thisMonthLastWeekDay)), to: thisMonthDate!)
-//
-//        let formatter = DateFormatter()
-//               formatter.locale = Locale(identifier: "ja")
-//        formatter.dateStyle = .medium
-//        formatter.timeStyle = .none
-//
-//        let dateString = formatter.string(from: firstDate!)
-//        print(dateString)
-//
-//        let thisMonthDateString = formatter.string(from: thisMonthDate!)
-//               print(thisMonthDateString)
-//
-//        let nextMonthDateString = formatter.string(from: nextMonthDate!)
-//                      print(nextMonthDateString)
-//
-//    }
-
 import UIKit
 
-class WeekViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    //storyboardのCollectionViewとコードを繋げた。
+//    プラスしたコード2月13日
+func groupForYearArr() -> [Int] {
+    return (1900..<2100).map({ $0 })
+}
+
+struct MonthInfo {
+       var year: Int
+       var month: Int
+       var day:Int?
+   }
+   
+
+
+//年と月をパラメータとして入れると、その年月の日付情報が返される
+   func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
+       
+       // func getMonthDaysをタプルで書くと下記の通り。
+       //略式はfunc getMonthDays(monthInfo: (Int,Int))。
+       //func getMonthDays(monthInfo:(year: Int, month: Int)) -> [(year: Int, month: Int, day: Int)?] {
+       
+       // Calendarは、アップルが提供しているFramework。
+       let calendar = Calendar.current
+       
+       var dates: [MonthInfo?] = []
+       //    上記を略さずに書くと下記の通り
+       //    var dates: Array<MonthInfo?> = []
+       // 上記をタプルで書くと下記の通り。
+       //    var dates: [(year: Int, month: Int, day: Int)?] = []
+       
+       //DateComponentsの定義
+       let dateComponents = DateComponents(calendar: calendar, year: monthInfo.year, month: monthInfo.month, day: 1)
+       
+       //カレンダー形式に変換
+       let startDay = calendar.date(from: dateComponents)!
+       
+       // !でunwrapをしない時はguardかifでOptional Binding
+       // guard let startDay = composedDate else { return [] }
+       //if let startDay = composedDate {}
+       
+       // 月の１日目の曜日を特定する。for文で回して１日より前のマスにnilを入れる。
+       let component = calendar.component(Calendar.Component.weekday, from: startDay)
+       let weekday = component - 1
+       (0 ..< weekday).forEach { _ in
+           dates.append(nil)
+       }
+       
+       //CollectionViewのCell(7×5)に順番に数字を入れていく
+       let totalDays = calendar.range(of: .day, in: .month, for: startDay)?.count ?? 0
+       (1 ..< totalDays + 1).forEach { day in
+           let data = MonthInfo.init(year: monthInfo.year, month: monthInfo.month, day: day)
+           // data.year
+           // print(data.year)
+           dates.append(data)
+       }
+       return dates
+       // nil, nil, nil, (2020, 1, 1), (2020, 1, 2), (2020, 1, 3), ...
+   }
+
+
+
+class WeekViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {    //storyboardのCollectionViewとコードを繋げた。
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -70,11 +89,6 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
         return temp
     }()
     
-//    プラスしたコード2月13日
-    func groupForYearArr() -> [Int] {
-        return (1900..<2100).map({ $0 })
-    }
-    
     
     
     
@@ -85,56 +99,11 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
     //}
     
     
-    struct MonthInfo {
-        var year: Int
-        var month: Int
-        var day:Int?
-    }
+   
     
-    //年と月をパラメータとして入れると、その年月の日付情報が返される
-    func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
-        
-        // func getMonthDaysをタプルで書くと下記の通り。
-        //略式はfunc getMonthDays(monthInfo: (Int,Int))。
-        //func getMonthDays(monthInfo:(year: Int, month: Int)) -> [(year: Int, month: Int, day: Int)?] {
-        
-        // Calendarは、アップルが提供しているFramework。
-        let calendar = Calendar.current
-        
-        var dates: [MonthInfo?] = []
-        //    上記を略さずに書くと下記の通り
-        //    var dates: Array<MonthInfo?> = []
-        // 上記をタプルで書くと下記の通り。
-        //    var dates: [(year: Int, month: Int, day: Int)?] = []
-        
-        //DateComponentsの定義
-        let dateComponents = DateComponents(calendar: calendar, year: monthInfo.year, month: monthInfo.month, day: 1)
-        
-        //カレンダー形式に変換
-        let startDay = calendar.date(from: dateComponents)!
-        
-        // !でunwrapをしない時はguardかifでOptional Binding
-        // guard let startDay = composedDate else { return [] }
-        //if let startDay = composedDate {}
-        
-        // 月の１日目の曜日を特定する。for文で回して１日より前のマスにnilを入れる。
-        let component = calendar.component(Calendar.Component.weekday, from: startDay)
-        let weekday = component - 1
-        (0 ..< weekday).forEach { _ in
-            dates.append(nil)
-        }
-        
-        //CollectionViewのCell(7×5)に順番に数字を入れていく
-        let totalDays = calendar.range(of: .day, in: .month, for: startDay)?.count ?? 0
-        (1 ..< totalDays + 1).forEach { day in
-            let data = MonthInfo.init(year: monthInfo.year, month: monthInfo.month, day: day)
-            // data.year
-            // print(data.year)
-            dates.append(data)
-        }
-        return dates
-        // nil, nil, nil, (2020, 1, 1), (2020, 1, 2), (2020, 1, 3), ...
-    }
+    
+    
+   
     
     
     
@@ -242,3 +211,44 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
 }
+
+
+
+// 下記はDateComponentsの練習用コード
+//        // Dateオブジェクトを操作するクラス
+//        let calendar = Calendar(identifier: .gregorian)
+//        // 今月の１日
+//        let thisMonthDate = calendar.date(from: DateComponents(year: 2020, month: 1, day: 1, hour: 0, minute: 0, second: 0, nanosecond: 0))
+//        //来月の１日
+//        let nextMonthDate = calendar.date(byAdding: DateComponents(month:1), to: thisMonthDate!)
+//
+//        //今月の最後の日
+//        let thisMonthLastDate = calendar.date(byAdding: DateComponents(day:-1), to: nextMonthDate!)
+//
+//        //曜日を出す。
+//        let thisMonthFirstWeekDay = calendar.component(.weekday, from: thisMonthDate!)
+//
+//        //前月の最後の週を知りたいので、今月の１日を引くために−１。
+//        let firstDate = calendar.date(byAdding: DateComponents(day: -1 * (thisMonthFirstWeekDay - 1)), to: thisMonthDate!)
+//
+//
+//         let thisMonthLastWeekDay = calendar.component(.weekday, from: thisMonthLastDate!)
+//
+//        //今月のカレンダーの最後の日がわかる
+//        let lastDate = calendar.date(byAdding: DateComponents(day:  (7-thisMonthLastWeekDay)), to: thisMonthDate!)
+//
+//        let formatter = DateFormatter()
+//               formatter.locale = Locale(identifier: "ja")
+//        formatter.dateStyle = .medium
+//        formatter.timeStyle = .none
+//
+//        let dateString = formatter.string(from: firstDate!)
+//        print(dateString)
+//
+//        let thisMonthDateString = formatter.string(from: thisMonthDate!)
+//               print(thisMonthDateString)
+//
+//        let nextMonthDateString = formatter.string(from: nextMonthDate!)
+//                      print(nextMonthDateString)
+//
+//    }
