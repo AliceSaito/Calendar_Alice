@@ -11,9 +11,9 @@ import UIKit
 class MonthMiniCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var miniMonthMiniCollectionView: MonthMiniCollectionView!
-    var monthInfoArry: [MonthInfo] = []
+    var monthInfoArry: [MonthInfo?] = []
     
-    func setData(monthInfo: [MonthInfo]) {
+    func setData(monthInfo: [MonthInfo?]) {
         self.monthInfoArry = monthInfo
 
         self.miniMonthMiniCollectionView.performBatchUpdates({
@@ -22,7 +22,7 @@ class MonthMiniCollectionViewCell: UICollectionViewCell {
             self.miniMonthMiniCollectionView.reloadData()
         }
         // FIXME: もう一回りロードしないとデータがめっちゃくちゃになる
-//        self.miniMonthCollectionView.reloadData()
+        self.miniMonthMiniCollectionView.reloadData()
     }
 
     override func awakeFromNib() {
@@ -48,14 +48,15 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthMiniDayCell", for: indexPath) as! MonthMiniDayCell
 
-        let date = monthInfoArry[indexPath.row]
-        cell.label.text = "\(date.day)"
-        let day : Int? = ""
-        if let days = day{
-            print("")
+
+        if let monthInfo = monthInfoArry[indexPath.row] {
+            if let day = monthInfo.day {
+                cell.label.text = "\(day)"
+            }
+        } else {
+            cell.label.text = ""
         }
-        
-        
+
         return cell
     }
 
@@ -74,23 +75,26 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
         if kind == UICollectionView.elementKindSectionHeader {
             headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MonthHeaderView", for: indexPath)
         }
-        guard  let yearMonth = monthInfoArry.last else { return headerView }
+        guard let monthInfo = monthInfoArry[indexPath.row] else { return headerView }
 
         let label = UILabel()
         label.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.backgroundColor = .blue
+        label.textColor = .black
 
-        if let month = yearMonth?.month {
-            let df = DateFormatter.init()
-
-            let monthSymbol = (df.monthSymbols)[month - 1]
-            let index = monthSymbol.index(monthSymbol.startIndex, offsetBy: 3)
-            let shotSymbol = monthSymbol[..<index]
-            label.text = "\(shotSymbol)"
-        }
         _ = headerView.subviews.map({ $0.removeFromSuperview() })
+
+        let month = monthInfo.month
+        let df = DateFormatter.init()
+
+        let monthSymbol = (df.monthSymbols)[month - 1]
+        let index = monthSymbol.index(monthSymbol.startIndex, offsetBy: 3)
+        let shotSymbol = monthSymbol[..<index]
+        label.text = "\(shotSymbol)"
         headerView.addSubview(label)
+
         return headerView
 
     }

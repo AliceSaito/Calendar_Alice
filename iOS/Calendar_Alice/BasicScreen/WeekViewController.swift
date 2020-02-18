@@ -17,13 +17,13 @@ func groupForYearArr() -> [Int] {
 struct MonthInfo {
        var year: Int
        var month: Int
-       var day:Int?
+       var day: Int?
    }
    
 
 
 //年と月をパラメータとして入れると、その年月の日付情報が返される
-   func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
+   func getMonthDays(monthInfo: MonthInfo) -> [MonthInfo?] {
        
        // func getMonthDaysをタプルで書くと下記の通り。
        //略式はfunc getMonthDays(monthInfo: (Int,Int))。

@@ -64,7 +64,7 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
         let year = self.years[indexPath.section]
         let month = indexPath.row + 1
         
-        var monthInfo = MonthInfo.init(year: year, month: month, day: nil)
+        let monthInfo = MonthInfo.init(year: year, month: month, day: nil)
         
         let date = getMonthDays(monthInfo: monthInfo )
 
