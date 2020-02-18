@@ -11,13 +11,13 @@ import UIKit
 class MonthMiniCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var miniMonthMiniCollectionView: MonthMiniCollectionView!
-    var monthInfo: [(year: Int, month: Int, day: Int)?] = []
-
-    func setData(monthInfo: [(year: Int, month: Int, day: Int)?]) {
-        self.monthInfo = monthInfo
+    var monthInfoArry: [MonthInfo] = []
+    
+    func setData(monthInfo: [MonthInfo]) {
+        self.monthInfoArry = monthInfo
 
         self.miniMonthMiniCollectionView.performBatchUpdates({
-            self.monthInfo = monthInfo
+            self.monthInfoArry = monthInfo
         }) { (_) in
             self.miniMonthMiniCollectionView.reloadData()
         }
@@ -27,13 +27,13 @@ class MonthMiniCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.monthInfo = []
+        self.monthInfoArry = []
 
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.monthInfo = []
+        self.monthInfoArry = []
     }
 }
 
@@ -41,24 +41,27 @@ class MonthMiniCollectionViewCell: UICollectionViewCell {
 extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return monthInfo.count
+        return monthInfoArry.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthMiniDayCell", for: indexPath) as! MonthMiniDayCell
 
-        if let date = monthInfo[indexPath.row] {
-            cell.label.text = "\(date.day)"
-        } else {
-            cell.label.text = ""
+        let date = monthInfoArry[indexPath.row]
+        cell.label.text = "\(date.day)"
+        let day : Int? = ""
+        if let days = day{
+            print("")
         }
+        
+        
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let date = monthInfo[indexPath.row]
+        let date = monthInfoArry[indexPath.row]
         print("selected date \(date)")
     }
 
@@ -71,7 +74,7 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
         if kind == UICollectionView.elementKindSectionHeader {
             headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MonthHeaderView", for: indexPath)
         }
-        guard  let yearMonth = monthInfo.last else { return headerView }
+        guard  let yearMonth = monthInfoArry.last else { return headerView }
 
         let label = UILabel()
         label.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
