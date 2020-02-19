@@ -15,14 +15,14 @@ class MonthMiniCollectionViewCell: UICollectionViewCell {
     
     func setData(monthInfo: [MonthInfo?]) {
         self.monthInfoArry = monthInfo
-
+        
         self.miniMonthMiniCollectionView.performBatchUpdates({
+            self.monthInfoArry = monthInfo
+        }) { (_) in
             self.miniMonthMiniCollectionView.reloadData()
         }
-            // FIXME: もう一回りロードしないとデータがめっちゃくちゃになる
-            self.miniMonthMiniCollectionView.reloadData()
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.monthInfoArry = []
