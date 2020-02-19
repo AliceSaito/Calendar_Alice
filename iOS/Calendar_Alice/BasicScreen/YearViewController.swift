@@ -42,9 +42,9 @@ class YearViewController: UIViewController {
 }
 
 
-extension YearViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension YearViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    // 月表示のカレンダーを２回繰り返し表示する
+    // 月表示のカレンダーを繰り返し表示する
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return years.count
     }
@@ -72,24 +72,28 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
 
         return cell
     }
+    
+    
+
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
     }
-
+    //年間表示中のカレンダー部分のサイズ調整
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: (self.collectionView.frame.width - 40)/3, height: 200)
+        return CGSize.init(width: (self.collectionView.frame.width - 40)/3, height: 140)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
+        //「2020」の部分。
         var headerView = UICollectionReusableView()
         let width = self.view.frame.width
-        headerView.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
-        headerView.backgroundColor = UIColor.green
         if kind == UICollectionView.elementKindSectionHeader {
             headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "YearHeaderView", for: indexPath)
         }
+//        headerView.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
+        headerView.backgroundColor = UIColor.green
 
         let label = UILabel()
         label.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)

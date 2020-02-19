@@ -68,8 +68,8 @@ struct MonthInfo {
    }
 
 
-
-class WeekViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {    //storyboardのCollectionViewとコードを繋げた。
+//UICollectionViewDelegateFlowLayoutは月カレンダー表示を一列７セルにするための設定。
+class WeekViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {    //storyboardのCollectionViewとコードを繋げた。
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -100,12 +100,6 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
    
-    
-    
-    
-   
-    
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -178,7 +172,25 @@ class WeekViewController: UIViewController, UICollectionViewDataSource, UICollec
             //値のない場合は、セルは空欄にする。
             cell.myLabel.text = ""
         }
+        
         return cell
+    }
+    
+    
+    //一週間７日分の７つのセルを固定するためのコード。画面の横幅を７で割って求める。- 1.0は微差調整。
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let w = collectionView.frame.size.width/7.0 - 1.0
+        return CGSize(width: w, height: w)
+    }
+    
+    //セル間の隙間を０にする。縦横。
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     //セルをタップした時に呼び出されるファンクション。これを使って予定表を作る。

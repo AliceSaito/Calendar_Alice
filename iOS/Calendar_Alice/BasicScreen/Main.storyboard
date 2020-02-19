@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="axF-IV-XfT" userLabel="Mini Month Mini Collection View" customClass="MonthMiniCollectionView" customModule="Calendar_Alice" customModuleProvider="target">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="axF-IV-XfT" userLabel="Mini Month Mini Collection View" customClass="MonthMiniCollectionView" customModule="Calendar_Alice" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lJd-w4-eD3">
@@ -65,21 +65,25 @@
                                                             <size key="customSize" width="10" height="10"/>
                                                             <connections>
                                                                 <outlet property="label" destination="92D-su-pAx" id="7su-Ic-esE"/>
+                                                                <segue destination="zP3-zK-zAn" kind="show" id="ELM-lL-FGo"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
-                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonthHeaderView" id="rxU-bE-I5V">
+                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonthHeaderView" id="rxU-bE-I5V" customClass="AlmanacCollectionReusableView" customModule="Calendar_Alice" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="56T-Mp-EbJ">
-                                                                <rect key="frame" x="0.0" y="-6" width="57" height="62"/>
+                                                                <rect key="frame" x="14" y="0.0" width="52" height="38"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <connections>
+                                                            <outlet property="AlmanacLabel" destination="56T-Mp-EbJ" id="ue3-3a-UYi"/>
+                                                        </connections>
                                                     </collectionReusableView>
                                                     <connections>
                                                         <outlet property="dataSource" destination="M7c-SL-fM8" id="S2Z-o2-IJE"/>
@@ -289,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jm1-uD-U4i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="1225"/>
+            <point key="canvasLocation" x="-300" y="1224.1071428571429"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="XaM-XO-hzZ">
@@ -638,7 +642,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RsE-Db-1gY"/>
-        <segue reference="x3I-O3-yqb"/>
+        <segue reference="P0g-pj-Kjg"/>
+        <segue reference="ygq-R7-qmj"/>
     </inferredMetricsTieBreakers>
 </document>

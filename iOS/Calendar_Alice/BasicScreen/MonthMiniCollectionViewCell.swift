@@ -59,46 +59,61 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        //タップした日付のデータをコンソルにプリント
         let date = monthInfoArry[indexPath.row]
         print("selected date \(date)")
     }
 
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         var headerView = UICollectionReusableView()
         let width = self.frame.width
-        headerView.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
-        headerView.backgroundColor = UIColor.green
+        
         if kind == UICollectionView.elementKindSectionHeader {
-            headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MonthHeaderView", for: indexPath)
+            var headerView2 = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MonthHeaderView", for: indexPath) as! AlmanacCollectionReusableView
+            headerView2.frame = CGRect.init(x: 0, y: 0, width: width, height: 30)
+            headerView2.backgroundColor = UIColor.yellow
+            headerView2.AlmanacLabel.text = ""
+            headerView = headerView2
+            
+            let monthName: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            let month: Int = monthInfoArry[10]!.month
+            let text = monthName[month - 1]
+            headerView2.AlmanacLabel.text = "\(text)"
+//            print(indexPath)
         }
         guard  let MonthInfo = monthInfoArry[indexPath.row] else { return headerView }
 
-        let label = UILabel()
-        label.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.backgroundColor = .blue
-        label.textColor = .black
-        
-        _ = headerView.subviews.map({ $0.removeFromSuperview() })
-
-        let month = MonthInfo.month
-        let df = DateFormatter.init()
-        let monthSymbol = (df.monthSymbols)[month - 1]
-        let index = monthSymbol.index(monthSymbol.startIndex, offsetBy: 3)
-        let shotSymbol = monthSymbol[..<index]
-        label.text = "\(shotSymbol)"
-        
-        headerView.addSubview(label)
+//        let month = MonthInfo.month
+//               let df = DateFormatter.init()
+//               let monthSymbol = (df.monthSymbols)[month - 1]
+//               let index = monthSymbol.index(monthSymbol.startIndex, offsetBy: 3)
+//               let shotSymbol = monthSymbol[..<index]
+//               label.text = "\(shotSymbol)"
+//
+//
+//        headerView.addSubview(label)
         return headerView
 
     }
 
-
+    
+ //一週間７日分の７つのセルを固定するためのコード。画面の横幅を７で割って求める。- 1.0は微差調整。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: self.frame.width/7, height: 15)
-    }
+       
+          
+          let w = collectionView.frame.size.width/7.0 - 1.0
+          return CGSize(width: w, height: w)
+      }
+      
+      //セル間の隙間を０にする。縦横。
+      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+          return 0
+      }
+      
+      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+          return 0
+      }
 }
 
