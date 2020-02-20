@@ -72,6 +72,7 @@ struct MonthInfo {
 class WeekViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {    //storyboardのCollectionViewとコードを繋げた。
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var selectedDate: Date!
     
     // 200年間の(年、Month)データ。200 x 12 = 2400件の月データがこのmonthArr配列に入っている。
     //staticが付いていると、別のクラスでも、クラス名.monthArrで直接呼び出せる
@@ -104,11 +105,12 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-            scrollToDate()
+        scrollToDate(date: selectedDate)
     }
     //アプリを開いた時に、今日の日付が開かれるようにするコード。
     private func scrollToDate(date: Date = Date()) {
         let calendar = Calendar(identifier: .gregorian)
+        
         //dateの情報をdateIntervalで秒単位に変換する。→ それをdateComponentsでIntに変換して、今を表示する。
         let yearInterval = calendar.dateInterval(of: .year, for: date)!
         let monthInterval = calendar.dateInterval(of: .month, for: date)!

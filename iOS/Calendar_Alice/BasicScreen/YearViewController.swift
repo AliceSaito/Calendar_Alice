@@ -12,9 +12,11 @@ import UIKit
 class YearViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var selectedDate: Date?
 
     let years: [Int] = groupForYearArr()
     var thisYear: Int {
+        
         let calendar = Calendar.current
         let yearInterval = calendar.dateInterval(of: .year, for: Date())!
         return calendar.dateComponents([.year], from: yearInterval.start).year!
@@ -34,9 +36,9 @@ class YearViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        var vc = segue.destination as! WeekViewController
-        
-        
+        vc.selectedDate = self.selectedDate
     }
+    
 
 
     private func scrollToDate(date: Date = Date()) {
@@ -83,10 +85,17 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
 
-    //タップした日付の情報を次の画面に渡す。
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+    //didSelectItemAt：タップした日付の情報を次の画面に渡す。
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let year = self.years[indexPath.section]
+        let month = indexPath.row + 1
+        
+        let dateComponents = DateComponents(calendar:Calendar.current, year: year, month: month, day: 1)
+        self.selectedDate = dateComponents.date
+        
+        return true
     }
+    
     //年間表示中のカレンダー部分のサイズ調整
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: (self.collectionView.frame.width - 40)/3, height: 140)
