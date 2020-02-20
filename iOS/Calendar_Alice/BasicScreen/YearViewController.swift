@@ -12,6 +12,7 @@ import UIKit
 class YearViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var selectedDate: Date?
 
     let years: [Int] = groupForYearArr()
     var thisYear: Int {
@@ -38,6 +39,12 @@ class YearViewController: UIViewController {
             self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.top, animated: false)
             self.collectionView.alpha = 1.0
         }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        var vc = segue.destination as! WeekViewController
+        vc.selectedDate = self.selectedDate
     }
 }
 
@@ -73,7 +80,16 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+
+        let year = self.years[indexPath.section]
+        let month = indexPath.row + 1
+
+        let dateComponents = DateComponents(calendar: Calendar.current, year: year, month: month, day: 1)
+        self.selectedDate = dateComponents.date
+
+        return true
+    }
 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

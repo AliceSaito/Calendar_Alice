@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AlI-gT-KSg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AlI-gT-KSg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="axF-IV-XfT" userLabel="Mini Month Mini Collection View" customClass="MonthMiniCollectionView" customModule="Calendar_Alice" customModuleProvider="target">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="axF-IV-XfT" userLabel="Mini Month Mini Collection View" customClass="MonthMiniCollectionView" customModule="Calendar_Alice" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lJd-w4-eD3">
@@ -43,7 +43,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonthMiniDayCell" id="a94-KW-DEl" customClass="MonthMiniDayCell" customModule="Calendar_Alice" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="MonthMiniDayCell" id="a94-KW-DEl" customClass="MonthMiniDayCell" customModule="Calendar_Alice" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="50" width="10" height="10"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ReJ-5N-ZVR">
@@ -65,11 +65,10 @@
                                                             <size key="customSize" width="10" height="10"/>
                                                             <connections>
                                                                 <outlet property="label" destination="92D-su-pAx" id="7su-Ic-esE"/>
-                                                                <segue destination="zP3-zK-zAn" kind="show" id="ELM-lL-FGo"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
-                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonthHeaderView" id="rxU-bE-I5V" customClass="AlmanacCollectionReusableView" customModule="Calendar_Alice" customModuleProvider="target">
+                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="MonthHeaderView" id="rxU-bE-I5V" customClass="AlmanacCollectionReusableView" customModule="Calendar_Alice" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <subviews>
@@ -643,6 +642,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="P0g-pj-Kjg"/>
-        <segue reference="ygq-R7-qmj"/>
+        <segue reference="x3I-O3-yqb"/>
     </inferredMetricsTieBreakers>
 </document>
