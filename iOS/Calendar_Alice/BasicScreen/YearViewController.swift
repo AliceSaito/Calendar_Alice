@@ -27,7 +27,15 @@ class YearViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //scrollToDateは指定された日付にスクロールさせるfunc。
         scrollToDate()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       var vc = segue.destination as! WeekViewController
+        
+        
     }
 
 
@@ -75,7 +83,7 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
 
-
+    //タップした日付の情報を次の画面に渡す。
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
     }

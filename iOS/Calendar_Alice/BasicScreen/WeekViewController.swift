@@ -104,7 +104,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        scrollToDate()
+            scrollToDate()
     }
     //アプリを開いた時に、今日の日付が開かれるようにするコード。
     private func scrollToDate(date: Date = Date()) {
