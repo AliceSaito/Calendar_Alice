@@ -8,8 +8,21 @@
 
 import UIKit
 
-class DayViewController: UIViewController {
-
+class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let list = ["Milk", "Water", "Soda", "Coffee"]
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return(list.count)
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "todayScheduleCell")
+        cell.textLabel?.text = list[indexPath.row]
+        
+        return(cell)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
