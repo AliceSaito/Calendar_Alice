@@ -9,7 +9,11 @@
 import UIKit
 
 class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var scrollCollectionView: UICollectionView!
+    
+    
+    @IBOutlet weak var checkcollectionview: UICollectionView!
+    
+    
     
     let list = ["Milk", "Water", "Soda", "Coffee"]
     
@@ -27,21 +31,22 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+
+}
+
+
+extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return 10
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
+    UICollectionViewCell {
+        let cell = checkcollectionview.dequeueReusableCell(withReuseIdentifier: "check", for: indexPath) as? ScrollDayCollectionViewCell
+        cell?.number.text = String(indexPath.row)
+        return cell!
     }
     
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
