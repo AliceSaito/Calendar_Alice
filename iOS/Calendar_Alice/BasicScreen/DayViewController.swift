@@ -9,6 +9,7 @@
 import UIKit
 
 class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var scrollCollectionView: UICollectionView!
     
     let list = ["Milk", "Water", "Soda", "Coffee"]
     
@@ -28,6 +29,9 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
     
 
     /*
