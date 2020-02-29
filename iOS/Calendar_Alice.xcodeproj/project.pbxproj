@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033E64CF240ACC610057A660 /* ScrollDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E64CE240ACC600057A660 /* ScrollDayCollectionViewCell.swift */; };
+		033E64D3240ACC880057A660 /* DayScrollViewControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E64D0240ACC870057A660 /* DayScrollViewControllerCollectionViewController.swift */; };
+		033E64D4240ACC880057A660 /* ScrollDayCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E64D1240ACC870057A660 /* ScrollDayCellViewController.swift */; };
+		033E64D5240ACC880057A660 /* DayScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E64D2240ACC870057A660 /* DayScrollViewController.swift */; };
 		08B060975C2610E9A7034869 /* Pods_Calendar_Alice_Calendar_AliceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABC3E07AB9E8178A8C318AA /* Pods_Calendar_Alice_Calendar_AliceUITests.framework */; };
 		1FC45A6D65BA569E501F2622 /* Pods_Calendar_AliceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1952E3A4023CF3400BD01F84 /* Pods_Calendar_AliceTests.framework */; };
 		6510757D23E815CD00D88756 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510757C23E815CD00D88756 /* DataController.swift */; };
@@ -18,7 +22,6 @@
 		6555765123F549F200DDE6BF /* MonthMiniCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6555765023F549F200DDE6BF /* MonthMiniCollectionViewCell.swift */; };
 		6555765323F54A2800DDE6BF /* MonthMiniCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6555765223F54A2800DDE6BF /* MonthMiniCollectionView.swift */; };
 		6555765523F54A5400DDE6BF /* MonthMiniDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6555765423F54A5400DDE6BF /* MonthMiniDayCell.swift */; };
-		656433B62408EA730057E895 /* ScrollDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656433B52408EA730057E895 /* ScrollDayCollectionViewCell.swift */; };
 		6572EB7423C81690003BD2EF /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572EB7323C81690003BD2EF /* WeekCollectionViewCell.swift */; };
 		6572EB7623C839F8003BD2EF /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572EB7523C839F8003BD2EF /* YearViewController.swift */; };
 		6572EB7823C83A35003BD2EF /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572EB7723C83A35003BD2EF /* DayViewController.swift */; };
@@ -54,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033E64CE240ACC600057A660 /* ScrollDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		033E64D0240ACC870057A660 /* DayScrollViewControllerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayScrollViewControllerCollectionViewController.swift; sourceTree = "<group>"; };
+		033E64D1240ACC870057A660 /* ScrollDayCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDayCellViewController.swift; sourceTree = "<group>"; };
+		033E64D2240ACC870057A660 /* DayScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayScrollViewController.swift; sourceTree = "<group>"; };
 		1952E3A4023CF3400BD01F84 /* Pods_Calendar_AliceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar_AliceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB74822A92EB0D88AD92173 /* Pods_Calendar_Alice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar_Alice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E948AF5B4A3333DD2FC2B8E /* Pods-Calendar_Alice-Calendar_AliceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar_Alice-Calendar_AliceUITests.release.xcconfig"; path = "Target Support Files/Pods-Calendar_Alice-Calendar_AliceUITests/Pods-Calendar_Alice-Calendar_AliceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,7 +75,6 @@
 		6555765023F549F200DDE6BF /* MonthMiniCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMiniCollectionViewCell.swift; sourceTree = "<group>"; };
 		6555765223F54A2800DDE6BF /* MonthMiniCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMiniCollectionView.swift; sourceTree = "<group>"; };
 		6555765423F54A5400DDE6BF /* MonthMiniDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMiniDayCell.swift; sourceTree = "<group>"; };
-		656433B52408EA730057E895 /* ScrollDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrollDayCollectionViewCell.swift; path = /Users/saito.alice/Calendar_Alice/iOS/Calendar_Alice/BasicScreen/ScrollDayCollectionViewCell.swift; sourceTree = "<absolute>"; };
 		6572EB7323C81690003BD2EF /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewCell.swift; sourceTree = "<group>"; };
 		6572EB7523C839F8003BD2EF /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
 		6572EB7723C83A35003BD2EF /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +180,10 @@
 				6583FA1023AA04EF00953F6E /* SceneDelegate.swift */,
 				6572EB7323C81690003BD2EF /* WeekCollectionViewCell.swift */,
 				6572EB7723C83A35003BD2EF /* DayViewController.swift */,
-				656433B52408EA730057E895 /* ScrollDayCollectionViewCell.swift */,
+				033E64CE240ACC600057A660 /* ScrollDayCollectionViewCell.swift */,
+				033E64D2240ACC870057A660 /* DayScrollViewController.swift */,
+				033E64D0240ACC870057A660 /* DayScrollViewControllerCollectionViewController.swift */,
+				033E64D1240ACC870057A660 /* ScrollDayCellViewController.swift */,
 				6583FA1223AA04EF00953F6E /* WeekViewController.swift */,
 				65C7754823E0285800014A1F /* API.swift */,
 				65FEEEAA23AA06900092D264 /* Main.storyboard */,
@@ -452,14 +461,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656433B62408EA730057E895 /* ScrollDayCollectionViewCell.swift in Sources */,
 				6555765523F54A5400DDE6BF /* MonthMiniDayCell.swift in Sources */,
 				6510758823E92AF100D88756 /* ScheduleListViewCotroller.swift in Sources */,
 				6510757F23E8160400D88756 /* ViewController.swift in Sources */,
 				6555765323F54A2800DDE6BF /* MonthMiniCollectionView.swift in Sources */,
+				033E64D5240ACC880057A660 /* DayScrollViewController.swift in Sources */,
 				6583FA1323AA04EF00953F6E /* WeekViewController.swift in Sources */,
 				6583FA0F23AA04EF00953F6E /* AppDelegate.swift in Sources */,
 				6572EB7423C81690003BD2EF /* WeekCollectionViewCell.swift in Sources */,
+				033E64CF240ACC610057A660 /* ScrollDayCollectionViewCell.swift in Sources */,
+				033E64D4240ACC880057A660 /* ScrollDayCellViewController.swift in Sources */,
 				6572EB7B23C84A12003BD2EF /* DateComponents.swift in Sources */,
 				6510758623E82A0B00D88756 /* ScheduleItemCell.swift in Sources */,
 				6510757D23E815CD00D88756 /* DataController.swift in Sources */,
@@ -471,6 +482,7 @@
 				6572EB7823C83A35003BD2EF /* DayViewController.swift in Sources */,
 				6510758423E8206D00D88756 /* AddSheduleViewController.swift in Sources */,
 				65AA31A123FD15E300F1A28A /* AlmanacCollectionReusableView.swift in Sources */,
+				033E64D3240ACC880057A660 /* DayScrollViewControllerCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
