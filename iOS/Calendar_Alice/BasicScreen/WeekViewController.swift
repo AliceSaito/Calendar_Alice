@@ -73,6 +73,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     @IBOutlet weak var collectionView: UICollectionView!
     
     var selectedDate: Date!
+    var selectedItem: MonthInfo?
     
     // 200年間の(年、Month)データ。200 x 12 = 2400件の月データがこのmonthArr配列に入っている。
     //staticが付いていると、別のクラスでも、クラス名.monthArrで直接呼び出せる
@@ -107,7 +108,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! DayViewController
-        vc.selectedDate = self.selectedDate
+        vc.selectedItem = self.selectedItem
         
         //これ
 //        self.performSegue(withIdentifier: "hoge", sender: nil)
@@ -207,6 +208,10 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     //セルをタップした時に呼び出されるファンクション。これを使って予定表を作る。
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
+        let yearMonth = WeekViewController.monthArr[indexPath.section]
+        let monthInfo = getMonthDays(monthInfo: yearMonth)[indexPath.item] 
+        self.selectedItem = monthInfo
+            
         performSegue(withIdentifier: "DayViewController", sender: nil)
     }
     

@@ -13,7 +13,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var checkcollectionview: UICollectionView!
     
-    var selectedDate: Date!
+    var selectedItem: MonthInfo!
     
     let list = ["Milk", "Water", "Soda", "Coffee"]
     
@@ -41,14 +41,19 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 10
+        let days = getMonthDays(monthInfo: self.selectedItem)
+        return days.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
     UICollectionViewCell {
         let cell = checkcollectionview.dequeueReusableCell(withReuseIdentifier: "check", for: indexPath) as? ScrollDayCollectionViewCell
-        cell?.number.text = String(indexPath.row)
-        return cell!
+        let days = getMonthDays(monthInfo: self.selectedItem)
+       
+        if let month = days[indexPath.item]?.month, let day = days[indexPath.item]?.day {
+        cell?.number.text = "\(month)/\(day)"
+        
     }
-    
-    
+    return cell!
+        
+    }
 }
