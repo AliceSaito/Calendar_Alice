@@ -13,7 +13,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var checkcollectionview: UICollectionView!
     
-    
+    var selectedDate: Date!
     
     let list = ["Milk", "Water", "Soda", "Coffee"]
     
@@ -32,7 +32,9 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
 
     }
-
+    
+    
+  
 }
 
 

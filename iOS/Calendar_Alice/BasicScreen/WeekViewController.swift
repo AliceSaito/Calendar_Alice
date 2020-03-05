@@ -1,5 +1,5 @@
 //
-//  WeekViewController.swift
+//  swift
 //  Calendar_Alice
 //
 //  Created by 斉藤 アリス on 2019/12/18.
@@ -91,8 +91,6 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     }()
     
     
-    
-    
     //★下記は年間カレンダーで使用する部分。あとで書く。
     // $0はクロージャー。Arrayで使う時は全ての要素にアクセスするという意味。
     //func groupForYearArr() -> [Int] {
@@ -100,13 +98,24 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     //}
     
     
-   
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         scrollToDate(date: selectedDate)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! DayViewController
+        vc.selectedDate = self.selectedDate
+        
+        //これ
+//        self.performSegue(withIdentifier: "hoge", sender: nil)
+    }
+       
+    
+    
+    
     //アプリを開いた時に、今日の日付が開かれるようにするコード。
     private func scrollToDate(date: Date = Date()) {
         let calendar = Calendar(identifier: .gregorian)
@@ -198,6 +207,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     //セルをタップした時に呼び出されるファンクション。これを使って予定表を作る。
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
+        performSegue(withIdentifier: "DayViewController", sender: nil)
     }
     
     //headerを設定するための戻り値を設定。
@@ -225,6 +235,8 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
 }
+
+
 
 
 
