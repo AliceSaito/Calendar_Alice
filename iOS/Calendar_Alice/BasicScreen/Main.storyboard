@@ -304,10 +304,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hhH-QJ-bQ3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="IXc-3q-qa5"/>
+                                    <constraint firstAttribute="height" constant="150" id="IXc-3q-qa5"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GbC-jG-viT">
                                     <size key="itemSize" width="103" height="95"/>
@@ -317,28 +317,41 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="check" id="DUg-ff-6LF" customClass="ScrollDayCollectionViewCell" customModule="Calendar_Alice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-12.5" width="103" height="95"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="103" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IQm-U2-7yr">
                                             <rect key="frame" x="0.0" y="0.0" width="103" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eV-93-KG0">
-                                                    <rect key="frame" x="8" y="8" width="87" height="79"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <rect key="frame" x="8" y="49" width="87" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghl-Cg-p6y">
+                                                    <rect key="frame" x="20" y="20" width="63" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Iz1-tz-mlJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="1eV-93-KG0" secondAttribute="trailing" constant="8" id="593-Mx-Zdg"/>
+                                                <constraint firstAttribute="trailing" secondItem="1eV-93-KG0" secondAttribute="trailing" constant="8" id="1zp-bh-aKF"/>
                                                 <constraint firstAttribute="bottom" secondItem="1eV-93-KG0" secondAttribute="bottom" constant="8" id="A3w-EE-XBy"/>
-                                                <constraint firstItem="1eV-93-KG0" firstAttribute="leading" secondItem="IQm-U2-7yr" secondAttribute="leading" constant="8" id="JhZ-Xh-i6m"/>
-                                                <constraint firstItem="1eV-93-KG0" firstAttribute="top" secondItem="IQm-U2-7yr" secondAttribute="top" constant="8" id="o57-97-HrX"/>
+                                                <constraint firstAttribute="trailing" secondItem="ghl-Cg-p6y" secondAttribute="trailing" constant="20" symbolic="YES" id="Rou-Ee-agE"/>
+                                                <constraint firstItem="1eV-93-KG0" firstAttribute="leading" secondItem="IQm-U2-7yr" secondAttribute="leading" constant="8" id="b2y-P7-y3U"/>
+                                                <constraint firstItem="1eV-93-KG0" firstAttribute="top" secondItem="ghl-Cg-p6y" secondAttribute="bottom" constant="8" symbolic="YES" id="fCO-9I-VnR"/>
+                                                <constraint firstItem="ghl-Cg-p6y" firstAttribute="leading" secondItem="IQm-U2-7yr" secondAttribute="leading" constant="20" symbolic="YES" id="lBe-Jt-gl0"/>
+                                                <constraint firstItem="ghl-Cg-p6y" firstAttribute="top" secondItem="IQm-U2-7yr" secondAttribute="top" constant="20" symbolic="YES" id="rll-qK-fTZ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="103" height="95"/>
                                         <connections>
+                                            <outlet property="dayOfWeekLabel" destination="ghl-Cg-p6y" id="Ww4-J1-B2p"/>
                                             <outlet property="number" destination="1eV-93-KG0" id="LRE-i4-QIL"/>
                                         </connections>
                                     </collectionViewCell>
@@ -349,7 +362,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RIX-AH-Msi">
-                                <rect key="frame" x="0.0" y="166" width="414" height="647"/>
+                                <rect key="frame" x="0.0" y="246" width="414" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayScheduleCell" id="SDK-5J-vyY">
@@ -684,7 +697,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="P0g-pj-Kjg"/>
+        <segue reference="xHU-V6-VsF"/>
         <segue reference="ygq-R7-qmj"/>
     </inferredMetricsTieBreakers>
 </document>
