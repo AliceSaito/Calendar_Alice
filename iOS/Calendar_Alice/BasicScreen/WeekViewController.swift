@@ -22,7 +22,7 @@ struct MonthInfo {
    
 
 
-//年と月をパラメータとして入れると、その年月の日付情報が返される
+//年と月のパラメータを入れると、その月の全ての日付がMonthInfo型で返される
    func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
        
        // func getMonthDaysをタプルで書くと下記の通り。
@@ -32,13 +32,14 @@ struct MonthInfo {
        // Calendarは、アップルが提供しているFramework。
        let calendar = Calendar.current
        
+    //ある月の日付データ(MonthInfo型)を格納するための空のArrayを用意
        var dates: [MonthInfo?] = []
        //    上記を略さずに書くと下記の通り
        //    var dates: Array<MonthInfo?> = []
        // 上記をタプルで書くと下記の通り。
        //    var dates: [(year: Int, month: Int, day: Int)?] = []
        
-       //DateComponentsの定義
+       //パラメータMonthInfoはDate型ではないので、DateComponentsを利用してDate型に変換する準備をする
        let dateComponents = DateComponents(calendar: calendar, year: monthInfo.year, month: monthInfo.month, day: 1)
        
        //カレンダー形式に変換

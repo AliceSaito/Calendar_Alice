@@ -39,21 +39,18 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
 
 extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        let days = getMonthDays(monthInfo: self.selectedItem)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        let days = getMonthDays(monthInfo: self.selectedItem).compactMap({$0})
         return days.count
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
-    UICollectionViewCell {
-        let cell = checkcollectionview.dequeueReusableCell(withReuseIdentifier: "check", for: indexPath) as? ScrollDayCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = checkcollectionview.dequeueReusableCell(withReuseIdentifier: "check", for: indexPath) as! ScrollDayCollectionViewCell
         let days = getMonthDays(monthInfo: self.selectedItem)
        
-        if let month = days[indexPath.item]?.month, let day = days[indexPath.item]?.day {
-        cell?.number.text = "\(month)/\(day)"
-        
+        if let monthInfo = days[indexPath.item] {
+            cell.setData(dayOfWeek: monthInfo)
     }
-    return cell!
+    return cell
         
     }
 }
