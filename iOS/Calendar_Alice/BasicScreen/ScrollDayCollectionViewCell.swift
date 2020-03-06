@@ -12,13 +12,21 @@ class ScrollDayCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var dayOfWeekLabel: UILabel!
     
-    
-    func setData(dayOfWeek:MonthInfo){
-        
-        if let dayOptinal = dayOfWeek.day {
-          
-            let str: String = String(dayOptinal)
-            self.number.text = str
-        }
+
+	// MonthInfoをパラメータとして受け取ってそれを利用してnumberラベルとdayOfWeekLabelに日付と曜日を反映させるためのfunc
+    func setData(dayOfWeek: MonthInfo){
+
+		// dayOfWeek.dayをStringで変換したいがdayがOptionalだからOptional bindingで値をチェックする
+		if let value = dayOfWeek.day {
+
+			// valueはIntのためStringで変換
+			let dayStr = String(value)
+			// valueラベルに変換した日付を代入する
+			self.number.text = dayStr
+			
+		} else {
+			self.number.text = ""
+		}
+
     }
 }

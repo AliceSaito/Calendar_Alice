@@ -15,30 +15,31 @@ func groupForYearArr() -> [Int] {
 }
 
 struct MonthInfo {
-       var year: Int
-       var month: Int
-       var day:Int?
-   }
+	var year: Int
+	var month: Int
+	var day: Int?
+}
    
 
 
-//年と月をパラメータとして入れると、その年月の日付情報が返される
-   func getMonthDays(monthInfo:MonthInfo) -> [MonthInfo?] {
+   //年と月をパラメータを入れると、その月の全ての日付がMonthInfo形で返される
+   func getMonthDays(monthInfo: MonthInfo) -> [MonthInfo?] {
        
        // func getMonthDaysをタプルで書くと下記の通り。
-       //略式はfunc getMonthDays(monthInfo: (Int,Int))。
+       // 略式はfunc getMonthDays(monthInfo: (Int,Int))。
        //func getMonthDays(monthInfo:(year: Int, month: Int)) -> [(year: Int, month: Int, day: Int)?] {
        
        // Calendarは、アップルが提供しているFramework。
        let calendar = Calendar.current
-       
+
+	   // ある月の日付データ(MonthInfoタイプ)を格納するためのArray
        var dates: [MonthInfo?] = []
        //    上記を略さずに書くと下記の通り
        //    var dates: Array<MonthInfo?> = []
        // 上記をタプルで書くと下記の通り。
        //    var dates: [(year: Int, month: Int, day: Int)?] = []
        
-       //DateComponentsの定義
+       // パラメータMonthInfoってDateタイプではないからDateComponentsを利用してDateに変換させる準備をする
        let dateComponents = DateComponents(calendar: calendar, year: monthInfo.year, month: monthInfo.month, day: 1)
        
        //カレンダー形式に変換
@@ -57,7 +58,7 @@ struct MonthInfo {
        
        //CollectionViewのCell(7×5)に順番に数字を入れていく
        let totalDays = calendar.range(of: .day, in: .month, for: startDay)?.count ?? 0
-       (1 ..< totalDays + 1).forEach { day in
+       (1 ..< totalDays+1).forEach { day in
            let data = MonthInfo.init(year: monthInfo.year, month: monthInfo.month, day: day)
            // data.year
            // print(data.year)
