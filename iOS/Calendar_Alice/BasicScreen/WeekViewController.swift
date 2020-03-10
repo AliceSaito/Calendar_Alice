@@ -111,12 +111,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
         var vc = segue.destination as! DayViewController
         vc.selectedItem = self.selectedItem
         
-        //これ
-//        self.performSegue(withIdentifier: "hoge", sender: nil)
     }
-       
-    
-    
     
     //アプリを開いた時に、今日の日付が開かれるようにするコード。
     private func scrollToDate(date: Date = Date()) {
