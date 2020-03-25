@@ -110,8 +110,11 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! DayViewController
         vc.selectedItem = self.selectedItem
-        
+         //2020.3.18
+        //scrollToDate(date: selectedItem)
     }
+
+    //
     
     //アプリを開いた時に、今日の日付が開かれるようにするコード。
     private func scrollToDate(date: Date = Date()) {
@@ -184,7 +187,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
         return cell
     }
     
-    
+    //
     //一週間７日分の７つのセルを固定するためのコード。画面の横幅を７で割って求める。- 1.0は微差調整。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

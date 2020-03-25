@@ -65,7 +65,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidAppear(_ animated: Bool) {
            super.viewDidAppear(animated)
            
-           scrollToDate(date: selectedItem)
+           
        }
     
   
