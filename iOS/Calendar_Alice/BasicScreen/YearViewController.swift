@@ -98,7 +98,7 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     //年間表示中のカレンダー部分のサイズ調整
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: (self.collectionView.frame.width - 40)/3, height: 140)
+        return CGSize.init(width: (self.collectionView.frame.width - 40)/3, height: 150)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -116,7 +116,7 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
         label.frame = CGRect.init(x: 0, y: 0, width: width, height: 40)
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.textColor = .red
+        label.textColor = .black
         let year = years[indexPath.section]
         label.text = "\(year)"
         _ = headerView.subviews.map({ $0.removeFromSuperview() })

@@ -26,19 +26,44 @@ class ScrollDayCollectionViewCell: UICollectionViewCell {
             self.number.text = ""
         }
   
-
+        
         var scrollWeekdayDateComponents = DateComponents()
         scrollWeekdayDateComponents.year = dayOfWeek.year
         scrollWeekdayDateComponents.month = dayOfWeek.month
         scrollWeekdayDateComponents.day = dayOfWeek.day!
+        //下記のようなコードでデバックエリアにprintして、nilを見つける。
+        print("😃",dayOfWeek.day!)
         
-        scrollWeekdayDateComponents.weekday = Calendar.current.weekday
-      
-        let scrollWeekday = Calendar.current.weekday(from: scrollWeekdayDateComponents)
-       
+        let userCalendar = Calendar.current
+        let someDateTime: Date? = userCalendar.date(from: scrollWeekdayDateComponents)
+        guard let date = someDateTime else {
+            //Bが入ったらnil。Bと書いておくと不具合を見つけやすい。
+            self.dayOfWeekLabel.text = "B"
+            return
+        }
+        
+        let comps = Calendar.current.dateComponents([.weekday], from: date)
+        
+        let weekIndx = comps.weekday
+        
+        let weeks = ["S","M","T","W","T","F","S"]
+        
+        // =は代入。==はイコールの意。
+        if weekIndx == 1 {
+            dayOfWeekLabel.textColor = UIColor.red
+        }
+        else if weekIndx == 7 {
+            dayOfWeekLabel.textColor = UIColor.blue
+        } else {
+            dayOfWeekLabel.textColor = UIColor.black
+        }
+        
+        if let weekIndex = weekIndx {
+            self.dayOfWeekLabel.text =  weeks[weekIndex - 1]
+        } else {
+            self.dayOfWeekLabel.text = "A"
+        }
         
     }
-    
-    
     
 }
