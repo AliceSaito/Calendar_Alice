@@ -25,25 +25,27 @@ class YearViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.alpha = 0.0
+        //scrollToDateは指定された日付にスクロールさせるfunc。
+        scrollToDate()
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //scrollToDateは指定された日付にスクロールさせるfunc。
-        scrollToDate()
         
     }
     
+    //次の画面にデータを渡す。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       var vc = segue.destination as! WeekViewController
+        var vc = segue.destination as! WeekViewController
         vc.selectedDate = self.selectedDate
     }
     
-
-
+    
+    //タップされたデータが出るまでスクロールする
     private func scrollToDate(date: Date = Date()) {
         UIView.animate(withDuration: 0.6) {
-            let index = self.thisYear - 1900
+            let index: Int = self.thisYear - 1900
             let indexPath = IndexPath.init(row: 0, section: index)
             self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.top, animated: false)
             self.collectionView.alpha = 1.0
