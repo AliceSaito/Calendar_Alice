@@ -46,20 +46,26 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
       
         })
         print("✋", selectedItem.day)
-        scrollToDate()
-        
+
     }
+
     
-    
-    private func scrollToDate(date: Date = Date()) {
-        UIView.animate(withDuration: 0.6) {
-            let index: Int = self.thisDay
-            let indexPath = IndexPath(item: 10, section: 0)
-            self.checkcollectionview.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.top, animated: false)
-            self.checkcollectionview.alpha = 1.0
+    private func scrollToDate() {
+        var selectedIndex: Int = 0
+        for (index, day) in self.days.enumerated() {
+            if let day = day {
+                if self.selectedItem.year == day.year,
+                    self.selectedItem.month == day.month,
+                    self.selectedItem.day == day.day {
+                    selectedIndex = index
+                    break
+                }
+            }
         }
-        
-        
+
+        let indexPath = IndexPath(item: selectedIndex, section: 0)
+        self.checkcollectionview.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
+        self.checkcollectionview.alpha = 1.0
     }
     
 
@@ -89,10 +95,8 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 //    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        checkcollectionview.scrollToItem (at: IndexPath(item: 15, section: 0),
-                                          at: .top,
-                                          animated: true)
+
+        scrollToDate()
     }
     
   
@@ -101,21 +105,18 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
 extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return days.count
     }
     //checkはcollection viewのidentifier
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = checkcollectionview.dequeueReusableCell(withReuseIdentifier: "check", for: indexPath) as! ScrollDayCollectionViewCell
-    
-       
+
+
         if let monthInfo = days[indexPath.item] {
             cell.setData(dayOfWeek: monthInfo)
-    }
-    return cell
+        }
+        return cell
         
     }
 
