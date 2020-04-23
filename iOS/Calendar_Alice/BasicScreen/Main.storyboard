@@ -126,13 +126,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="REY-XK-rIU"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="AWb-Rz-GEU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fk4-zi-7BG">
-                            <connections>
-                                <segue destination="zP3-zK-zAn" kind="show" id="ygq-R7-qmj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="AWb-Rz-GEU"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="93y-fg-jen" id="2FW-ZZ-wPN"/>
@@ -278,13 +272,7 @@
                         <viewLayoutGuide key="safeArea" id="EJg-GY-NLM"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Nh2-Sx-4EH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Auc-CY-fs4">
-                            <connections>
-                                <segue destination="1nr-cH-mdU" kind="showDetail" id="P0g-pj-Kjg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Nh2-Sx-4EH"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="Gez-2W-5wl" id="cjh-nb-eTg"/>
@@ -304,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hhH-QJ-bQ3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="IXc-3q-qa5"/>
@@ -362,7 +350,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RIX-AH-Msi">
-                                <rect key="frame" x="0.0" y="246" width="414" height="567"/>
+                                <rect key="frame" x="0.0" y="306" width="414" height="507"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayScheduleCell" id="SDK-5J-vyY">
@@ -378,16 +366,27 @@
                                     <outlet property="dataSource" destination="QCN-FJ-yKT" id="ys5-Fh-qMm"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year/Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLC-W7-cMf">
+                                <rect key="frame" x="40" y="108" width="125.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GAZ-VA-1Wk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="RIX-AH-Msi" firstAttribute="top" secondItem="hhH-QJ-bQ3" secondAttribute="bottom" constant="8" symbolic="YES" id="Pam-Iu-Dcs"/>
                             <constraint firstItem="hhH-QJ-bQ3" firstAttribute="trailing" secondItem="vpq-ke-5YN" secondAttribute="trailing" id="SCv-dh-L43"/>
-                            <constraint firstItem="hhH-QJ-bQ3" firstAttribute="top" secondItem="vpq-ke-5YN" secondAttribute="top" id="Svb-BC-lMv"/>
+                            <constraint firstItem="gLC-W7-cMf" firstAttribute="top" secondItem="8P0-iP-79t" secondAttribute="topMargin" constant="20" id="aHk-3z-rOu"/>
                             <constraint firstItem="vpq-ke-5YN" firstAttribute="bottom" secondItem="RIX-AH-Msi" secondAttribute="bottom" id="agj-hx-qLg"/>
                             <constraint firstItem="hhH-QJ-bQ3" firstAttribute="leading" secondItem="vpq-ke-5YN" secondAttribute="leading" id="cfb-5S-QfW"/>
+                            <constraint firstItem="gLC-W7-cMf" firstAttribute="leading" secondItem="vpq-ke-5YN" secondAttribute="leading" constant="40" id="d08-wf-MXn"/>
                             <constraint firstItem="RIX-AH-Msi" firstAttribute="leading" secondItem="vpq-ke-5YN" secondAttribute="leading" id="d6a-U9-xM8"/>
                             <constraint firstItem="vpq-ke-5YN" firstAttribute="trailing" secondItem="RIX-AH-Msi" secondAttribute="trailing" id="f5i-yd-F3b"/>
+                            <constraint firstItem="hhH-QJ-bQ3" firstAttribute="top" secondItem="gLC-W7-cMf" secondAttribute="bottom" id="rr4-tT-dq0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vpq-ke-5YN"/>
                     </view>
@@ -412,6 +411,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="checkcollectionview" destination="hhH-QJ-bQ3" id="hKb-bI-mhK"/>
+                        <outlet property="yearMonthLabel" destination="gLC-W7-cMf" id="dg5-HC-Ibe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGZ-5M-6SC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -698,6 +698,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xHU-V6-VsF"/>
-        <segue reference="ygq-R7-qmj"/>
+        <segue reference="ELM-lL-FGo"/>
     </inferredMetricsTieBreakers>
 </document>

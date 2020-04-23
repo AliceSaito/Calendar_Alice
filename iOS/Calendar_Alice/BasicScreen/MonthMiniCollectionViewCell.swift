@@ -45,19 +45,54 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthMiniDayCell", for: indexPath) as! MonthMiniDayCell
-
+        
+        cell.contentView.backgroundColor = .clear
+        
         if let monthInfo = monthInfoArry[indexPath.row] {
             if let day = monthInfo.day {
                 cell.label.text = "\(day)"
             }
+            
+            let dateComponents = DateComponents(calendar:Calendar.current, year: monthInfo.year, month: monthInfo.month, day: monthInfo.day)
+            let d: Date = dateComponents.date!
+            if Calendar.current.isDateInToday(d) {
+                //↑指定したのは今日の範囲内なのか調べる
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)  //colorliteralと打つと出てくる
+            }
+            
         }  else {
             cell.label.text = ""
+            
         }
+        
+        
+        //上記の別の書き方：今日だけピンク色の背景にするおほ方法。
+        //        let date:Date = Date()  今日を取得(Date型）
+        //        let MonthInfo:MonthInfo  Year,Month,DayをIntで持っている
+        //
+        //        今知りたいのはYear, Month, Dayと、Date型を比較して、その日かどうか判定する
+        //        ↓
+        //        func isToday(year: Int, month: Int, day: Int) -> Bool {
+        //            let dateComponents = DateComponents(calendar: Calendar.current, year: monthInfo.year, month: monthInfo.month, day:monthInfo.day)
+        //            let d: Date = dateComponents.date
+        //            if Calenda.current.isDateInToday(date: d) {
+        //                return true
+        //            }
+        //            else {
+        //                return false
+        //            }
+        //        }
+        
+        //        var isToday: Bool = false
+        //        if isToday == true {
+        //            cell.contentView.backgroundColor = .red
+        //        }
+        //
         
         
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //タップした日付のデータをコンソルにプリント
         let date = monthInfoArry[indexPath.row]

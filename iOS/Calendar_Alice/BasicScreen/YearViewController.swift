@@ -22,28 +22,36 @@ class YearViewController: UIViewController {
         return calendar.dateComponents([.year], from: yearInterval.start).year!
 
     }
+    //viewDidLoadは最初の一回しか呼ばれない。
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.alpha = 0.0
-        //scrollToDateは指定された日付にスクロールさせるfunc。
-        scrollToDate()
-
+        
+        
     }
-
+    var firstAppear: Bool = false
+    //viewDidAppearは何回も呼ばれる。でもviewDidLoadでは処理が間に合わないのでココで呼ぶ。何度も呼ばれないようにif文を下記に記載。
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if firstAppear == false {
+            print("1回目")
+            //scrollToDateは指定された日付にスクロールさせるfunc。
+            scrollToDate()
+            firstAppear = true
+        }
         
     }
     
     //次の画面にデータを渡す。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! WeekViewController
+        let vc = segue.destination as! WeekViewController
         vc.selectedDate = self.selectedDate
     }
     
     
     //タップされたデータが出るまでスクロールする
     private func scrollToDate(date: Date = Date()) {
+        
         UIView.animate(withDuration: 0.6) {
             let index: Int = self.thisYear - 1900
             let indexPath = IndexPath.init(row: 0, section: index)
@@ -76,7 +84,7 @@ extension YearViewController: UICollectionViewDataSource, UICollectionViewDelega
         let year = self.years[indexPath.section]
         let month = indexPath.row + 1
         
-        var monthInfo = MonthInfo.init(year: year, month: month, day: nil)
+        let monthInfo = MonthInfo.init(year: year, month: month, day: nil)
         
         let date = getMonthDays(monthInfo: monthInfo )
 

@@ -13,19 +13,21 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var checkcollectionview: UICollectionView!
     
+    @IBOutlet weak var yearMonthLabel: UILabel!
+    //渡されたに日付情報
     var selectedItem: MonthInfo!
     
     let list = ["Milk", "Water", "Soda", "Coffee"]
     
     var days: [MonthInfo?] = []
     //scrolltodateのために追加
-    var thisDay: Int {
-        
-        let calendar = Calendar.current
-        let monthInterval = calendar.dateInterval(of: .day, for: Date())!
-        return calendar.dateComponents([.day], from: monthInterval.start).day!
-
-    }
+    //    var thisDay: Int {
+    //
+    //        let calendar = Calendar.current
+    //        let monthInterval = calendar.dateInterval(of: .day, for: Date())!
+    //        return calendar.dateComponents([.day], from: monthInterval.start).day!
+    //
+    //    }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -46,6 +48,9 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
       
         })
         print("✋", selectedItem.day)
+        
+        //年/月を表示
+        self.yearMonthLabel.text = "\(selectedItem.year)/\(selectedItem.month)"
         
     }
     
@@ -115,14 +120,14 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
     //checkはcollection viewのidentifier
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = checkcollectionview.dequeueReusableCell(withReuseIdentifier: "check", for: indexPath) as! ScrollDayCollectionViewCell
-    
-       
+        
+        
         if let monthInfo = days[indexPath.item] {
             cell.setData(dayOfWeek: monthInfo)
-    }
-    return cell
+        }
+        return cell
         
     }
-
+    
 }
 

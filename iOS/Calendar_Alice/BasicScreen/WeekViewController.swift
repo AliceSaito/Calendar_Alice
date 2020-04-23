@@ -108,7 +108,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! DayViewController
+        let vc = segue.destination as! DayViewController
         vc.selectedItem = self.selectedItem
        
     }
