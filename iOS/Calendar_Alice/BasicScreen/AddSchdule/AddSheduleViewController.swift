@@ -16,32 +16,25 @@ class AddScheduleViewController: UITableViewController {
     
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var datePickerTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var memoTextField: UITextField!
     
+    var selectedDate: Date!
+    var selectedItem: MonthInfo?
+    
     //スケジュール一覧を保存するための変数delegate。 AddScheduleViewControllerDelegate?というプロトコル型。
     var delegate: AddScheduleViewControllerDelegate?
     
-    private var datePicker: UIDatePicker?
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(AddScheduleViewController.dateChanged(datePicker:)), for: .valueChanged)
-        
-        datePickerTextField.inputView = datePicker
-        
-    }
-    @objc func dateChanged(datePicker: UIDatePicker){
+        //選択した日付をスケジュール入力画面で表示する
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        
-        datePickerTextField.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
+        dateTextField.text = dateFormatter.string(from: selectedDate)
+        dateTextField.isEnabled = false
     }
     
     
@@ -53,7 +46,7 @@ class AddScheduleViewController: UITableViewController {
         //creatNoteというfancを呼び出す。noteというentityを変数noteに入れて、titleなどに値を入れる。
         let note = appDelegate.dataController.createNote()
         note.title = titleTextField.text
-        note.date = datePicker?.date
+        note.date = selectedDate
         note.address = placeTextField.text
         note.memo = memoTextField.text
         note.url = urlTextField.text

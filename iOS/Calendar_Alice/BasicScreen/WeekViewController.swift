@@ -108,14 +108,16 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! DayViewController
-        vc.selectedItem = self.selectedItem
-       
+        if segue.identifier == "dayViewController" {
+            let vc = segue.destination as! DayViewController
+            vc.selectedItem = self.selectedItem
+            var dateComponents  = DateComponents(calendar:Calendar.current, year: selectedItem!.year, month: selectedItem!.month, day: selectedItem!.day)
+            vc.selectedDate = dateComponents.date!
+        }
     }
-
-
     
-    //アプリを開いた時に、今日の日付が開かれるようにするコード。
+    
+    //月表示で選択した日付が日表示で開かれるようにする
     private func scrollToDate(date: Date = Date()) {
         let calendar = Calendar(identifier: .gregorian)
         
@@ -210,7 +212,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
         let monthInfo = getMonthDays(monthInfo: yearMonth)[indexPath.item] 
         self.selectedItem = monthInfo
             
-        performSegue(withIdentifier: "DayViewController", sender: nil)
+        performSegue(withIdentifier: "dayViewController", sender: nil)
     }
     
     //headerを設定するための戻り値を設定。

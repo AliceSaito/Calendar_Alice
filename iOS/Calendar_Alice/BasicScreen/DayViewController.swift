@@ -13,47 +13,83 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var checkcollectionview: UICollectionView!
     
+    @IBOutlet weak var noteListTableView: UITableView!
     @IBOutlet weak var yearMonthLabel: UILabel!
-    //渡されたに日付情報
+    //渡された日付情報
     var selectedItem: MonthInfo!
-    
-    let list = ["Milk", "Water", "Soda", "Coffee"]
-    
+    var selectedDate: Date!
+    var noteList: [Note] = []
     var days: [MonthInfo?] = []
-    //scrolltodateのために追加
-    //    var thisDay: Int {
-    //
-    //        let calendar = Calendar.current
-    //        let monthInterval = calendar.dateInterval(of: .day, for: Date())!
-    //        return calendar.dateComponents([.day], from: monthInterval.start).day!
-    //
-    //    }
-    
+ 
+    //日表示のtableViewにスケジュールのタイトルを表示する
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return(list.count)
+        return noteList.count
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        let note = noteList[indexPath.row]
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "todayScheduleCell")
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = note.title
         
-        return(cell)
+        return cell
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //日表示ではnilが入っている日付を表示させないように、filteringした。
         days = getMonthDays(monthInfo: self.selectedItem).filter({ (monthinfo) -> Bool in
             return monthinfo != nil
-      
         })
         print("✋", selectedItem.day)
         
         //年/月を表示
         self.yearMonthLabel.text = "\(selectedItem.year)/\(selectedItem.month)"
-        
+        //スケジュールを読み込む
+        noteList = FetchNote()
+        //スケジュールをリロードして表示
+        noteListTableView.reloadData()
     }
     
+   //
+    func FetchNote() ->  [Note]  {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return []
+        }
+        
+        //DataController.swiftに書いたものを呼び出している。fetchNotesAllDate
+        //        let fetched = appDelegate.dataController.fetchNotesAllDate()
+        //        fetched.forEach {
+        //            let note = $0
+        //            print("🥶",note.date)
+        //        }
+        
+        //        日付を指定して[Note]から該当のデータを取得
+        let fetchedDay: [Note] = appDelegate.dataController.fetchNotesWithDate(date: selectedDate)
+        
+        //それを表示
+        //        fetchedDay.forEach {
+        //            let note = $0
+        //            print("⏰",note.date)
+        //        }
+        
+        //$0の説明。forEachとセットで使う。順番に取得する。
+        //        var hoge: [String] = ["a", "b", "c"]
+        //        hoge.forEach { (ho) in
+        //            print(ho)
+        //        }
+        //        hoge.forEach {
+        //            print($0)
+        //        }
+        //        for ho in hoge {
+        //            print(ho)
+        //        }
+        
+        return fetchedDay
+    }
+    
+
     
     private func scrollToDate() {
         var selectedIndex: Int = 0
@@ -128,6 +164,13 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
         return cell
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addScheduleViewController" {
+            let vc = segue.destination as! AddScheduleViewController
+            vc.selectedDate = self.selectedDate
+        }
+       }
     
 }
 

@@ -276,7 +276,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="Gez-2W-5wl" id="cjh-nb-eTg"/>
-                        <segue destination="QCN-FJ-yKT" kind="show" identifier="DayViewController" id="wPd-el-JBi"/>
+                        <segue destination="QCN-FJ-yKT" kind="show" identifier="dayViewController" id="wPd-el-JBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jm1-uD-U4i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -396,7 +396,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="3Y2-ha-coL">
                                 <connections>
-                                    <segue destination="1nr-cH-mdU" kind="showDetail" id="xHU-V6-VsF"/>
+                                    <segue destination="1nr-cH-mdU" kind="showDetail" identifier="addScheduleViewController" id="xHU-V6-VsF"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="search" id="9co-gc-nGA"/>
@@ -411,6 +411,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="checkcollectionview" destination="hhH-QJ-bQ3" id="hKb-bI-mhK"/>
+                        <outlet property="noteListTableView" destination="RIX-AH-Msi" id="9AB-7W-esc"/>
                         <outlet property="yearMonthLabel" destination="gLC-W7-cMf" id="dg5-HC-Ibe"/>
                     </connections>
                 </viewController>
@@ -515,6 +516,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amy-3E-7NK">
+                                                    <rect key="frame" x="12" y="9.5" width="33.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7D-5q-gjs">
                                                     <rect key="frame" x="102" y="3" width="300" height="34"/>
                                                     <constraints>
@@ -523,12 +530,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amy-3E-7NK">
-                                                    <rect key="frame" x="12" y="9.5" width="33.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Amy-3E-7NK" firstAttribute="leading" secondItem="RFu-3c-VT9" secondAttribute="leading" constant="12" id="EQb-cc-q12"/>
@@ -545,25 +546,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3AL-OJ-uJf">
-                                                    <rect key="frame" x="102" y="3" width="300" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="nsb-9W-gnI"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXp-fc-ntD">
                                                     <rect key="frame" x="12" y="9.5" width="36" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWa-wt-Ih4" userLabel="Date Text Field">
+                                                    <rect key="frame" x="102" y="3" width="300" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="XMN-Ri-NkC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="3AL-OJ-uJf" secondAttribute="trailing" constant="12" id="6j6-0S-Qdm"/>
+                                                <constraint firstItem="OWa-wt-Ih4" firstAttribute="centerY" secondItem="ni1-yf-CrF" secondAttribute="centerY" id="4fG-XJ-16b"/>
                                                 <constraint firstItem="lXp-fc-ntD" firstAttribute="centerY" secondItem="ni1-yf-CrF" secondAttribute="centerY" id="9uB-DX-K1y"/>
-                                                <constraint firstItem="3AL-OJ-uJf" firstAttribute="centerY" secondItem="lXp-fc-ntD" secondAttribute="centerY" id="9vz-29-Gpo"/>
+                                                <constraint firstAttribute="trailing" secondItem="OWa-wt-Ih4" secondAttribute="trailing" constant="12" id="gXt-c6-6fY"/>
                                                 <constraint firstItem="lXp-fc-ntD" firstAttribute="leading" secondItem="ni1-yf-CrF" secondAttribute="leading" constant="12" id="jZn-jV-v44"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -575,6 +576,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN7-8f-mL9">
+                                                    <rect key="frame" x="12" y="9.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbP-sv-Afp">
                                                     <rect key="frame" x="102" y="3" width="300" height="34"/>
                                                     <constraints>
@@ -583,12 +590,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN7-8f-mL9">
-                                                    <rect key="frame" x="12" y="9.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fbP-sv-Afp" firstAttribute="centerY" secondItem="BN7-8f-mL9" secondAttribute="centerY" id="5uM-Xn-i9c"/>
@@ -605,6 +606,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXK-Nw-hfw">
+                                                    <rect key="frame" x="12" y="9.5" width="32.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MtA-7I-0jp">
                                                     <rect key="frame" x="102" y="3" width="300" height="34"/>
                                                     <constraints>
@@ -613,12 +620,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXK-Nw-hfw">
-                                                    <rect key="frame" x="12" y="9.5" width="32.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HXK-Nw-hfw" firstAttribute="leading" secondItem="H0f-v1-p6i" secondAttribute="leading" constant="12" id="A0e-70-nFT"/>
@@ -667,7 +668,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="datePickerTextField" destination="3AL-OJ-uJf" id="tJJ-ns-49J"/>
+                        <outlet property="dateTextField" destination="OWa-wt-Ih4" id="B5L-Lt-1n5"/>
                         <outlet property="memoTextField" destination="KGs-SH-hKV" id="JBy-Y4-Kqn"/>
                         <outlet property="placeTextField" destination="fbP-sv-Afp" id="Q3M-tk-bvz"/>
                         <outlet property="titleTextField" destination="U7D-5q-gjs" id="OrG-JI-M37"/>
@@ -676,7 +677,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQS-jT-6Ru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="1953"/>
+            <point key="canvasLocation" x="279.71014492753625" y="1952.6785714285713"/>
         </scene>
         <!--Item-->
         <scene sceneID="Cj8-MA-VOB">

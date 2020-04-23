@@ -64,9 +64,8 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
             cell.label.text = ""
             
         }
-        
-        
-        //上記の別の書き方：今日だけピンク色の背景にするおほ方法。
+       
+        //上記の別の書き方：今日だけピンク色の背景にする方法。
         //        let date:Date = Date()  今日を取得(Date型）
         //        let MonthInfo:MonthInfo  Year,Month,DayをIntで持っている
         //
@@ -89,8 +88,8 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
         //        }
         //
         
-        
         return cell
+        //↑色々セットしたcellを最後にreturnで返す
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

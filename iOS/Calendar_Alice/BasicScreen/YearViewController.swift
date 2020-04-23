@@ -36,7 +36,7 @@ class YearViewController: UIViewController {
         if firstAppear == false {
             print("1回目")
             //scrollToDateは指定された日付にスクロールさせるfunc。
-            scrollToDate()
+            scrollToTHisYear()
             firstAppear = true
         }
         
@@ -49,8 +49,8 @@ class YearViewController: UIViewController {
     }
     
     
-    //タップされたデータが出るまでスクロールする
-    private func scrollToDate(date: Date = Date()) {
+    //今年が出るようにしている
+    private func scrollToTHisYear() {
         
         UIView.animate(withDuration: 0.6) {
             let index: Int = self.thisYear - 1900

@@ -48,10 +48,10 @@ class DataController: NSObject {
         }
     }
 //    fetch：保存されているデータを取得する。条件がないから全てのスケジュールを取得している。
-    func fetchNotes() -> [Note] {
+    func fetchNotesAllDate() -> [Note] {
         let context = persistentContainer.viewContext
         let notesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-
+   
         do {
             let fetchedNotes = try context.fetch(notesFetch) as! [Note]
             return fetchedNotes
@@ -62,7 +62,23 @@ class DataController: NSObject {
         return []
     }
     
-//    上の条件式が入っているバージョン。predicate：条件を入れるためのもの。
+    //スケジュールを日付で検索する。0:00:00〜23:59:59
+    func fetchNotesWithDate(date:Date) -> [Note] {
+         let context = persistentContainer.viewContext
+         let notesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        let nextDay = date + 24*60*60
+        notesFetch.predicate = NSPredicate(format: "(date>=%@) AND (date<%@)",date as NSDate,nextDay as NSDate)
+        
+         do {
+             let fetchedNotes = try context.fetch(notesFetch) as! [Note]
+             return fetchedNotes
+         } catch {
+             fatalError("Failed to fetch employees: \(error)")
+         }
+         return []
+     }
+    
+//    predicate：条件を入れるためのもの。検索機能で使おう！
     func fetchNote(value:String) -> [Note] {
         let context = persistentContainer.viewContext
         let notesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
