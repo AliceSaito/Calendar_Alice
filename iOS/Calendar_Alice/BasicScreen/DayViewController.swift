@@ -31,9 +31,12 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let note = noteList[indexPath.row]
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "todayScheduleCell")
         cell.textLabel?.text = note.title
+        //note.titleはAddSheduleViewController.swiftに定義したtitleTextField.textのこと。
         
         return cell
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +49,13 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //年/月を表示
         self.yearMonthLabel.text = "\(selectedItem.year)/\(selectedItem.month)"
         //スケジュールを読み込む
-        noteList = FetchNote()
+        noteList = fetchNote()
         //スケジュールをリロードして表示
         noteListTableView.reloadData()
     }
     
-   //
-    func FetchNote() ->  [Note]  {
+   //fetchは読み込むってこと。
+    func fetchNote() ->  [Note]  {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return []
@@ -141,7 +144,6 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
           scrollToDate()
     }
     
-  
 }
 
 
@@ -157,14 +159,35 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = checkcollectionview.dequeueReusableCell(withReuseIdentifier: "check", for: indexPath) as! ScrollDayCollectionViewCell
         
+        cell.contentView.backgroundColor = .clear
         
         if let monthInfo = days[indexPath.item] {
             cell.setData(dayOfWeek: monthInfo)
+            //選んだ日(selectedItem)と一致する日付をyellowにする処理
+            if monthInfo.year == selectedItem.year && monthInfo.month == selectedItem.month && monthInfo.day == selectedItem.day{
+                cell.contentView.backgroundColor = .yellow
+            }
+            
         }
+        
         return cell
+    }
+    
+    //新たに日付をタップしたら、黄色をそっちに移動させる
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedItem = days[indexPath.item]
+        collectionView.reloadData()
+        
+        //selectedItemからselectedDateに型を変換
+        let dateComponents = DateComponents(calendar:Calendar.current, year: selectedItem.year, month: selectedItem.month, day: selectedItem.day)
+        self.selectedDate = dateComponents.date
+        //再読み込みしてスケジュールを更新
+        noteList = fetchNote()
+        noteListTableView.reloadData()
         
     }
     
+    //DayViewControllerからsegueを使ってAddScheduleViewControllerにselectedDateのデータを渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addScheduleViewController" {
             let vc = segue.destination as! AddScheduleViewController

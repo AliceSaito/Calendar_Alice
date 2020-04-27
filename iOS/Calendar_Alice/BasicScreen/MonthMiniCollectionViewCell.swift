@@ -45,15 +45,16 @@ extension MonthMiniCollectionViewCell: UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthMiniDayCell", for: indexPath) as! MonthMiniDayCell
-        
+        //今日じゃないところは背景を透明にする。
         cell.contentView.backgroundColor = .clear
         
         if let monthInfo = monthInfoArry[indexPath.row] {
             if let day = monthInfo.day {
                 cell.label.text = "\(day)"
             }
-            
+            //monthInfo型の変数dayをDateComponentsを使ってDate型に変換する。
             let dateComponents = DateComponents(calendar:Calendar.current, year: monthInfo.year, month: monthInfo.month, day: monthInfo.day)
+            //今日をピンク色にする処理
             let d: Date = dateComponents.date!
             if Calendar.current.isDateInToday(d) {
                 //↑指定したのは今日の範囲内なのか調べる

@@ -106,7 +106,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
         scrollToDate(date: selectedDate)
     }
     
-    
+    //WeekViewControllerからsegueを使ってDaycheduleViewControllerにselectedDateとselectedItemのデータを渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dayViewController" {
             let vc = segue.destination as! DayViewController
@@ -161,10 +161,11 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
     
     //空のcellを用意する。storyboardで作った"WeekCollectionViewCell"と紐付ける。
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        //dequeueすれば他のファイルのIBOutletを使うことができる
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeekCollectionViewCell", for: indexPath) as! WeekCollectionViewCell
         print(indexPath)
-        
+        //今日じゃないところは背景を透明にする。
+        cell.contentView.backgroundColor = .clear
         // rowは一日ごとのマス(普通はitemと書く)。sectionは月単位のカレンダー。indexPathは、rowとsectionと一緒に使う。
         //myLabelはstoryboardで、私が決めたセルの名前。
         let yearMonth = WeekViewController.monthArr[indexPath.section]
@@ -180,9 +181,36 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
             }
             cell.myLabel.text = "\(day.day!)"
             
+            
+            
+            
+            //monthInfo型の変数dayをDateComponentsを使ってDate型に変換する。
+            let dateComponents = DateComponents(calendar:Calendar.current, year: day.year, month: day.month, day: day.day)
+            //NoteはCoreDataを使っていて、CoreDataはAppDelegateに置いている。
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                let fetchedDay: [Note] = appDelegate.dataController.fetchNotesWithDate(date:  dateComponents.date!)
+                //fetchedDayはスケジュールの日付。myScheduleは緑色の●。
+                if fetchedDay.isEmpty {
+                    cell.mySchedule.isHidden = true
+                }
+                else {
+                    cell.mySchedule.isHidden = false
+                }
+            }
+            
+            //今日をピンク色にする処理
+            let d: Date = dateComponents.date!
+            if Calendar.current.isDateInToday(d) {
+                //↑指定したのは今日の範囲内なのか調べる
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)  //colorliteralと打つと出てくる
+            }
+            
+            
+            
         } else {
             //値のない場合は、セルは空欄にする。
             cell.myLabel.text = ""
+            cell.mySchedule.isHidden = true
         }
         
         return cell

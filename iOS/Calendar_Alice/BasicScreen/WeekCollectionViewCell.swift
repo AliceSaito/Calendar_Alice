@@ -11,4 +11,6 @@ import UIKit
 class WeekCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var mySchedule: UILabel!
+    
 }

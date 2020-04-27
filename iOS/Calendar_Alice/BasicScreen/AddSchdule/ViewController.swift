@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return
         }
-        let fetched = appDelegate.dataController.fetchNotes()
+        let fetched = appDelegate.dataController.fetchNotesAllDate()
         fetched.forEach {
             let note = $0
             print(note.title!)
@@ -54,7 +54,6 @@ class ViewController: UIViewController {
         }
         
     }
-    
     
 }
 

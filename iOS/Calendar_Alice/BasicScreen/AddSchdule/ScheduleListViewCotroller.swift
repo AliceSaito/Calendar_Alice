@@ -17,7 +17,7 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return []
         }
-        return appDelegate.dataController.fetchNotes()
+        return appDelegate.dataController.fetchNotesAllDate()
         
     }
     
