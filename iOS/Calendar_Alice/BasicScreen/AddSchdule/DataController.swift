@@ -82,8 +82,8 @@ class DataController: NSObject {
     func fetchNote(value:String) -> [Note] {
         let context = persistentContainer.viewContext
         let notesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-        notesFetch.predicate = NSPredicate(format: "title == %@",value)
-
+        notesFetch.predicate = NSPredicate(format: "title CONTAINS %@",value)
+//title CONTAINS %@：タイトルに含まれている文字を検索にヒットさせる。
         do {
             let fetchedNotes = try context.fetch(notesFetch) as! [Note]
             return fetchedNotes

@@ -417,7 +417,6 @@
                                     <segue destination="1nr-cH-mdU" kind="showDetail" identifier="addScheduleViewController" id="xHU-V6-VsF"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="search" id="9co-gc-nGA"/>
                             <barButtonItem systemItem="organize" id="4lV-Lp-8Ce">
                                 <connections>
                                     <action selector="addDummyData:" destination="K3G-Sp-QzM" id="1H8-6O-0TA"/>
@@ -445,9 +444,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J5u-Ue-Oqi">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J5u-Ue-Oqi">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="2Wx-HN-G7O">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
@@ -456,10 +454,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" tag="30" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddScheduleItem" id="8hG-iM-ArX" customClass="ScheduleItemCell" customModule="Calendar_Alice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="105" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="105" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8hG-iM-ArX" id="YX1-vz-Rw8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ItemLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ixa-zQ-5QO">
@@ -481,8 +479,38 @@
                                     <outlet property="delegate" destination="K3G-Sp-QzM" id="GLF-qL-8hu"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zai-3N-N5f">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Mo3-Z1-6UG"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="ZFU-Ap-hPm">
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="yAf-Ft-m3h">
+                                            <rect key="frame" x="20" y="5" width="307" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                            <connections>
+                                                <action selector="editingChanged:" destination="K3G-Sp-QzM" eventType="editingChanged" id="VXU-1m-2fv"/>
+                                                <outlet property="delegate" destination="K3G-Sp-QzM" id="32a-Wd-Hka"/>
+                                            </connections>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem title="Cancel" id="8o2-QW-ynt"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zai-3N-N5f" firstAttribute="leading" secondItem="M29-OZ-H54" secondAttribute="leading" id="6Sp-6K-1A5"/>
+                            <constraint firstItem="J5u-Ue-Oqi" firstAttribute="top" secondItem="zai-3N-N5f" secondAttribute="bottom" id="CMp-6V-9qO"/>
+                            <constraint firstItem="J5u-Ue-Oqi" firstAttribute="trailing" secondItem="M29-OZ-H54" secondAttribute="trailing" id="IgV-QU-Qvs"/>
+                            <constraint firstItem="J5u-Ue-Oqi" firstAttribute="bottom" secondItem="M29-OZ-H54" secondAttribute="bottom" id="YMU-MC-McM"/>
+                            <constraint firstItem="J5u-Ue-Oqi" firstAttribute="leading" secondItem="M29-OZ-H54" secondAttribute="leading" id="aQN-sV-627"/>
+                            <constraint firstItem="zai-3N-N5f" firstAttribute="top" secondItem="M29-OZ-H54" secondAttribute="top" id="uPn-Pj-AF5"/>
+                            <constraint firstItem="zai-3N-N5f" firstAttribute="trailing" secondItem="M29-OZ-H54" secondAttribute="trailing" id="ytQ-Hh-Ps6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="M29-OZ-H54"/>
                     </view>
                     <navigationItem key="navigationItem" id="bsj-tx-5Cz">
@@ -493,20 +521,17 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="search" id="61I-Rv-FX1"/>
-                            <barButtonItem systemItem="organize" id="jjo-07-Mum">
-                                <connections>
-                                    <action selector="addDummyData:" destination="K3G-Sp-QzM" id="6Bm-w2-4gz"/>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="SearchIcon" destination="61I-Rv-FX1" id="pzF-gm-zwO"/>
+                        <outlet property="searchToolBarHaightConstraint" destination="Mo3-Z1-6UG" id="U6D-xO-LLz"/>
                         <outlet property="tableView" destination="J5u-Ue-Oqi" id="bZR-s2-MrA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZ2-CV-7mR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1401" y="1225"/>
+            <point key="canvasLocation" x="1398.5507246376812" y="1224.1071428571429"/>
         </scene>
         <!--Add Schedule View Controller-->
         <scene sceneID="kTm-Bu-E34">
@@ -716,7 +741,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xHU-V6-VsF"/>
+        <segue reference="RsE-Db-1gY"/>
         <segue reference="ELM-lL-FGo"/>
     </inferredMetricsTieBreakers>
 </document>
