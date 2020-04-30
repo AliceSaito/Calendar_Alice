@@ -21,8 +21,8 @@ class AddScheduleViewController: UITableViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var memoTextField: UITextField!
     
-    var selectedDate: Date!
-    var selectedItem: MonthInfo?
+    var selectedDate: Date?
+//    var selectedItem: MonthInfo?
     
     //スケジュール一覧を保存するための変数delegate。 AddScheduleViewControllerDelegate?というプロトコル型。
     var delegate: AddScheduleViewControllerDelegate?
@@ -33,7 +33,9 @@ class AddScheduleViewController: UITableViewController {
         //選択した日付をスケジュール入力画面で表示する
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        dateTextField.text = dateFormatter.string(from: selectedDate)
+        if let selectedDate = selectedDate {
+            dateTextField.text = dateFormatter.string(from: selectedDate)
+        }
         dateTextField.isEnabled = false
     }
     
@@ -59,6 +61,7 @@ class AddScheduleViewController: UITableViewController {
         //保存したら編集画面を閉じる
         self.dismiss(animated: true, completion: nil)
     }
+    
     
 }
 

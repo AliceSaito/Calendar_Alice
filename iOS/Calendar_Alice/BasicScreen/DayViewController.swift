@@ -192,8 +192,14 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
         if segue.identifier == "addScheduleViewController" {
             let vc = segue.destination as! AddScheduleViewController
             vc.selectedDate = self.selectedDate
+            vc.delegate = self
         }
-       }
+    }
     
 }
-
+//上のvc.delegate = selfを書くためには下のコードが必要。新しいスケジュールを追加する処理。
+extension DayViewController: AddScheduleViewControllerDelegate {
+    func didSaveNewSchedule() {
+        print("didSaveNewSchedule")
+    }
+}

@@ -12,7 +12,7 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
     
     @IBOutlet weak var searchToolBarHaightConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var SearchIcon: UIBarButtonItem!
+    @IBOutlet weak var searchIcon: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     var notes: [Note] = []
@@ -34,8 +34,8 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
         //最初は検索バーを隠す処理
         searchToolBarHaightConstraint.constant = 0
         
-        SearchIcon.target = self
-        SearchIcon.action = #selector(barButtonTapped(_:))
+        searchIcon.target = self
+        searchIcon.action = #selector(barButtonTapped(_:))
  
     }
     
@@ -58,23 +58,31 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
     
     
     
-    //segueの繋ぎ先がAddScheduleViewController。それをself(ScheduleListViewCotroller)に伝えて処理するよ(delegate)。
+    //segueの繋ぎ先がAddScheduleViewControllerの場合。それをself(ScheduleListViewCotroller)に伝えて処理する(delegate)。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddScheduleViewController
-//selfはScheduleListViewCotrollerのこと。vcはインスタンス。delegateはvcがもっているプロパティ。そこにself:自分自身を代入。
-        vc.delegate = self
-
+        if segue.identifier == "addScheduleViewController" {
+            let vc = segue.destination as! AddScheduleViewController
+            //selfはScheduleListViewCotrollerのこと。vcはインスタンス。delegateはvcがもっているプロパティ。そこにself:自分自身を代入。
+            vc.delegate = self
+        }
         
+        //segueの繋ぎ先がScheduleDetailViewControllerの場合。noteを次の画面に渡す。
+        if segue.identifier == "scheduleDetailViewController" {
+            let vc = segue.destination as! ScheduleDetailViewController
+            vc.note = sender as? Note
+        }
     }
     //AddScheduleViewControlllerに新しいスケジュールが書かれた時、一覧を最新版にリロードする。
     func didSaveNewSchedule() {
         tableView.reloadData()
-        
     }
     
     
     
 }
+
+
+
 
 //tableViewの一つのセクションの中に、何個の項目を表示させるか。numberOfRowsInSectionはfunc。
 extension ScheduleListViewCotroller : UITableViewDelegate, UITableViewDataSource {
@@ -84,9 +92,16 @@ extension ScheduleListViewCotroller : UITableViewDelegate, UITableViewDataSource
     //indexPathごとに表示させる UITableViewCellを返す。
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddScheduleItem", for: indexPath) as! ScheduleItemCell
-        let note = notes[indexPath.item]
+        let note = notes[indexPath.row]
         cell.ItemLabel.text = note.title
         return cell
+    }
+    
+    //一覧のtitleをタップルすると詳細画面(scheduleDetailViewController)に遷移する。
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let note: Note = notes[indexPath.row]
+        //sender：タップしたviewの型
+        performSegue(withIdentifier: "scheduleDetailViewController", sender: note)
     }
 }
 
@@ -97,6 +112,5 @@ extension ScheduleListViewCotroller: UITextFieldDelegate {
         return true
     }
 }
-
 
 
