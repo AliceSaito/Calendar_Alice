@@ -93,5 +93,11 @@ class DataController: NSObject {
 
         return []
     }
+    //保存済みのスケジュールを削除する処理。
+    //(_ note: Note)にすると呼び出す時に引数を省略できる。ScheduleDetailViewControllerで呼び出している。
+    func deleteNote(note: Note) {
+        persistentContainer.viewContext.delete(note)
+        saveContext()
+    }
 }
 

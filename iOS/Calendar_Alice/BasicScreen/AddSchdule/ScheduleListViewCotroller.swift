@@ -25,18 +25,30 @@ class ScheduleListViewCotroller: UIViewController, AddScheduleViewControllerDele
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //notesにdataBaseからとってきたNote一覧を詰める。
+        notes = fetchNotes()
+        tableView.reloadData()
+        
+      }
+    
+ 
+      
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //count：何個のデータが入っているかをコンソルでチェック。ビルドした回数が表示される。
+        //notesにdataBaseからとってきたNote一覧を詰める。
         notes = fetchNotes()
         print("notes >> \(notes.count)")
         print("notes >> \(notes)")
         //最初は検索バーを隠す処理
         searchToolBarHaightConstraint.constant = 0
-        
+
         searchIcon.target = self
         searchIcon.action = #selector(barButtonTapped(_:))
- 
+
     }
     
     //検索バーの文字が変わったら、コンソルに出る。

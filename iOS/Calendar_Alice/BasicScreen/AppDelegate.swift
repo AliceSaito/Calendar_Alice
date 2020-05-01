@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // なんかしたいことあれば
             print("OK!!!")
         }
+        
         return true
     }
     

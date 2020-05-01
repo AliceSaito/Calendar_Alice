@@ -20,6 +20,9 @@ class ScheduleDetailViewController: UIViewController {
     
     var note: Note?
     
+    //@IBOutlet と @IBAction は両方繋げてok
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
 
     override func viewDidLoad() {
@@ -38,4 +41,20 @@ class ScheduleDetailViewController: UIViewController {
     
     
     
+    @IBAction func editButton(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func deleteButton(_ sender: Any) -> Void {
+        ///アンラップ。appDelegateの中にあるdataControllerを下のコードで使いたいから、appDelegateをアンラップするためのguard文。if文でもOK.
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.dataController.deleteNote(note: note!)
+        //遷移元画面へ戻る
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+  
 }
