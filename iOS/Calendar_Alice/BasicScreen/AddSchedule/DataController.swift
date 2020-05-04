@@ -47,6 +47,19 @@ class DataController: NSObject {
             }
         }
     }
+    
+    //スケジュールを編集して保存
+    func updateNote(note:Note){
+        note.setValue(note.title, forKey: "title")
+        note.setValue(note.address, forKey: "address")
+        note.setValue(note.memo, forKey: "memo")
+        note.setValue(note.url, forKey: "url")
+        note.setValue(note.date, forKey: "date")
+        saveContext()
+    }
+    
+    
+    
 //    fetch：保存されているデータを取得する。条件がないから全てのスケジュールを取得している。
     func fetchNotesAllDate() -> [Note] {
         let context = persistentContainer.viewContext
@@ -99,5 +112,10 @@ class DataController: NSObject {
         persistentContainer.viewContext.delete(note)
         saveContext()
     }
+    
+    
+    
+    
+    
 }
 

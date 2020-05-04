@@ -36,6 +36,7 @@
 		65AA31A123FD15E300F1A28A /* AlmanacCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA31A023FD15E300F1A28A /* AlmanacCollectionReusableView.swift */; };
 		65C7754923E0285800014A1F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7754823E0285800014A1F /* API.swift */; };
 		65D9ACF9245ABC16003B2A6D /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D9ACF8245ABC16003B2A6D /* ScheduleDetailViewController.swift */; };
+		65D9ACFB245FE436003B2A6D /* EditScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D9ACFA245FE436003B2A6D /* EditScheduleViewController.swift */; };
 		65FEEEAB23AA06900092D264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FEEEAA23AA06900092D264 /* Main.storyboard */; };
 		927E92DB7444F001F369FEFC /* Pods_Calendar_Alice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB74822A92EB0D88AD92173 /* Pods_Calendar_Alice.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		65AA31A023FD15E300F1A28A /* AlmanacCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlmanacCollectionReusableView.swift; sourceTree = "<group>"; };
 		65C7754823E0285800014A1F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		65D9ACF8245ABC16003B2A6D /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewController.swift; sourceTree = "<group>"; };
+		65D9ACFA245FE436003B2A6D /* EditScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScheduleViewController.swift; sourceTree = "<group>"; };
 		65FEEEAA23AA06900092D264 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7870A85AD6EE970DAB172A94 /* Pods-Calendar_Alice-Calendar_AliceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar_Alice-Calendar_AliceUITests.debug.xcconfig"; path = "Target Support Files/Pods-Calendar_Alice-Calendar_AliceUITests/Pods-Calendar_Alice-Calendar_AliceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7ABC3E07AB9E8178A8C318AA /* Pods_Calendar_Alice_Calendar_AliceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar_Alice_Calendar_AliceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +143,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6510757923E8151D00D88756 /* AddSchdule */ = {
+		6510757923E8151D00D88756 /* AddSchedule */ = {
 			isa = PBXGroup;
 			children = (
 				6510757C23E815CD00D88756 /* DataController.swift */,
@@ -151,8 +153,9 @@
 				6510758723E92AF100D88756 /* ScheduleListViewCotroller.swift */,
 				6510757E23E8160400D88756 /* ViewController.swift */,
 				6510758023E8162E00D88756 /* Model.xcdatamodeld */,
+				65D9ACFA245FE436003B2A6D /* EditScheduleViewController.swift */,
 			);
-			path = AddSchdule;
+			path = AddSchedule;
 			sourceTree = "<group>";
 		};
 		6555764F23F5470500DDE6BF /* Year */ = {
@@ -190,7 +193,7 @@
 				033E64D1240ACC870057A660 /* ScrollDayCellViewController.swift */,
 				65C7754823E0285800014A1F /* API.swift */,
 				65FEEEAA23AA06900092D264 /* Main.storyboard */,
-				6510757923E8151D00D88756 /* AddSchdule */,
+				6510757923E8151D00D88756 /* AddSchedule */,
 			);
 			path = BasicScreen;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				65D9ACF9245ABC16003B2A6D /* ScheduleDetailViewController.swift in Sources */,
 				6572EB7423C81690003BD2EF /* WeekCollectionViewCell.swift in Sources */,
 				033E64CF240ACC610057A660 /* ScrollDayCollectionViewCell.swift in Sources */,
+				65D9ACFB245FE436003B2A6D /* EditScheduleViewController.swift in Sources */,
 				033E64D4240ACC880057A660 /* ScrollDayCellViewController.swift in Sources */,
 				6572EB7B23C84A12003BD2EF /* DateComponents.swift in Sources */,
 				6510758623E82A0B00D88756 /* ScheduleItemCell.swift in Sources */,

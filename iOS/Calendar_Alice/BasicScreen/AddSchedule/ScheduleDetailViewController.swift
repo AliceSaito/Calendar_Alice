@@ -14,6 +14,8 @@ class ScheduleDetailViewController: UIViewController {
     
     @IBOutlet weak var dayLabel: UILabel!
     
+    @IBOutlet weak var placeLabel: UILabel!
+    
     @IBOutlet weak var memoLabel: UILabel!
     
     @IBOutlet weak var urlLabel: UILabel!
@@ -24,11 +26,10 @@ class ScheduleDetailViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setUp(){
         //受け取ってきたnoteをそれぞれのlabelに詰める。
         titleLabel.text = note?.title
+        placeLabel.text = note?.address
         memoLabel.text = note?.memo
         urlLabel.text = note?.url
         //時間：date型をstring型に変える。
@@ -37,10 +38,17 @@ class ScheduleDetailViewController: UIViewController {
         if let date = note?.date {
             dayLabel.text = dateFormatter.string(from: date)
         }
+        
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUp()
+    }
     
+    
+    //segueでEditScheduleViewControllerと繋いでいる
     @IBAction func editButton(_ sender: Any) {
     }
     
@@ -56,5 +64,21 @@ class ScheduleDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "editScheduleViewController" {
+             let vc = segue.destination as! EditScheduleViewController
+             vc.note = self.note
+             vc.delegate = self
+         }
+     }
+    
   
+}
+//スケジュールの編集
+extension ScheduleDetailViewController :  EditScheduleViewControllerDelegate {
+    func didSaveEditSchedule() {
+        setUp()
+    }
+    
+    
 }
