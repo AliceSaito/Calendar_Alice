@@ -21,8 +21,12 @@ class AddScheduleViewController: UITableViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var memoTextField: UITextField!
     
+    @IBOutlet weak var scheduleSaveButton: UIButton!
+    
     var selectedDate: Date?
 //    var selectedItem: MonthInfo?
+    
+    private var titleText: String?
     
     //スケジュール一覧を保存するための変数delegate。 AddScheduleViewControllerDelegate?というプロトコル型。
     var delegate: AddScheduleViewControllerDelegate?
@@ -37,7 +41,20 @@ class AddScheduleViewController: UITableViewController {
             dateTextField.text = dateFormatter.string(from: selectedDate)
         }
         dateTextField.isEnabled = false
+        //タイトルがないと保存ボタンが押せない処理
+        self.validate()
+        
     }
+    
+    
+    
+    @IBAction func cheduleCancelButton(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
+    
+    
+    }
+    
+    
     
     
     @IBAction func scheduleSaveButton(_ sender: Any) {
@@ -53,13 +70,40 @@ class AddScheduleViewController: UITableViewController {
         note.memo = memoTextField.text
         note.url = urlTextField.text
         
-        
         //saveContextというfuncで、書いた内容を保存する。
         appDelegate.dataController.saveContext()
         //delegateを使って、SheduleListViewControllerに通知する。
         delegate?.didSaveNewSchedule()
         //保存したら編集画面を閉じる
         self.dismiss(animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    
+    @IBAction func titleCount(_ sender: UITextField) {
+        titleText = sender.text
+        self.validate()
+        
+    }
+    
+    
+    private func validate() {
+        // nilの場合はscheduleSaveButtonを非活性に
+        guard let titleTxt = self.titleTextField.text else {
+            
+            self.scheduleSaveButton.isEnabled = false
+            return
+        }
+        // 文字数が0の場合(""空文字)もscheduleSaveButtonを非活性に
+        if titleTxt.count == 0 {
+            
+            self.scheduleSaveButton.isEnabled = false
+            return
+        }
+        // nilでないかつ0文字以上はscheduleSaveButtonを活性に
+        self.scheduleSaveButton.isEnabled = true
     }
     
     

@@ -711,14 +711,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="apt-h1-tvT">
-                            <rect key="frame" x="0.0" y="256" width="414" height="44"/>
+                        <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="wSf-7T-dTq">
+                            <rect key="frame" x="0.0" y="256" width="414" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="SAVE"/>
-                            <connections>
-                                <action selector="scheduleSaveButton:" destination="1nr-cH-mdU" eventType="touchUpInside" id="jVY-kI-AZx"/>
-                            </connections>
-                        </button>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="apt-h1-tvT">
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="SAVE"/>
+                                    <connections>
+                                        <action selector="scheduleSaveButton:" destination="1nr-cH-mdU" eventType="touchUpInside" id="jVY-kI-AZx"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="niu-Dr-ysD">
+                                    <rect key="frame" x="207" y="0.0" width="207" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="CANCEL"/>
+                                    <connections>
+                                        <action selector="cheduleCancelButton:" destination="1nr-cH-mdU" eventType="touchUpInside" id="zJK-qi-azX"/>
+                                        <action selector="scheduleSaveButton:" destination="1nr-cH-mdU" eventType="touchUpInside" id="Ct3-Oy-vUI"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                         <sections>
                             <tableViewSection id="fvc-UY-kEX">
                                 <cells>
@@ -742,6 +759,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="titleCount:" destination="1nr-cH-mdU" eventType="editingChanged" id="MWu-H3-nrB"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -863,6 +883,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <view contentMode="scaleToFill" id="lZ8-6G-ZGe">
+                                                    <rect key="frame" x="0.0" y="-2" width="414" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KGs-SH-hKV" firstAttribute="centerY" secondItem="J0u-oX-VCT" secondAttribute="centerY" id="8fZ-5Z-I72"/>
@@ -884,6 +909,7 @@
                         <outlet property="dateTextField" destination="OWa-wt-Ih4" id="B5L-Lt-1n5"/>
                         <outlet property="memoTextField" destination="KGs-SH-hKV" id="JBy-Y4-Kqn"/>
                         <outlet property="placeTextField" destination="fbP-sv-Afp" id="Q3M-tk-bvz"/>
+                        <outlet property="scheduleSaveButton" destination="apt-h1-tvT" id="ZpS-Qf-Rb9"/>
                         <outlet property="titleTextField" destination="U7D-5q-gjs" id="OrG-JI-M37"/>
                         <outlet property="urlTextField" destination="MtA-7I-0jp" id="hZg-Bs-FWS"/>
                     </connections>
@@ -917,14 +943,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pSP-Cq-v1F">
-                            <rect key="frame" x="0.0" y="256" width="414" height="44"/>
+                        <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" id="s1J-Bi-AzD">
+                            <rect key="frame" x="0.0" y="256" width="414" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="SAVE"/>
-                            <connections>
-                                <action selector="scheduleSaveButton:" destination="KyI-eb-Uiy" eventType="touchUpInside" id="4hJ-5N-FVe"/>
-                            </connections>
-                        </button>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6py-zr-PPX">
+                                    <rect key="frame" x="0.0" y="0.0" width="202" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="SAVE"/>
+                                    <connections>
+                                        <action selector="scheduleSaveButton:" destination="KyI-eb-Uiy" eventType="touchUpInside" id="EhY-fU-der"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pSP-Cq-v1F">
+                                    <rect key="frame" x="212" y="0.0" width="202" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="CANCEL"/>
+                                    <connections>
+                                        <action selector="scheduleCancelButton:" destination="KyI-eb-Uiy" eventType="touchUpInside" id="Rj7-qa-qcg"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                         <sections>
                             <tableViewSection id="cGk-kb-MHZ">
                                 <cells>
@@ -948,6 +990,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="titleCount:" destination="KyI-eb-Uiy" eventType="editingChanged" id="82S-qY-aEl"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1093,6 +1138,7 @@
                         <outlet property="dateTextField" destination="bcK-qZ-Ebd" id="ZmI-n1-7rl"/>
                         <outlet property="memoTextField" destination="Ac1-Yg-7VD" id="tMw-TF-XmX"/>
                         <outlet property="placeTextField" destination="SVG-fc-fNh" id="CNK-lT-mRS"/>
+                        <outlet property="scheduleSaveButton" destination="6py-zr-PPX" id="2Ap-1B-9P7"/>
                         <outlet property="titleTextField" destination="F8T-Du-tUq" id="JW7-At-EhE"/>
                         <outlet property="urlTextField" destination="ccX-WV-Hpb" id="gqD-ZA-nKf"/>
                     </connections>

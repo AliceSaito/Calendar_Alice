@@ -24,8 +24,10 @@ class EditScheduleViewController: UITableViewController {
     var note: Note?
     var selectedDate : Date?
     var delegate: EditScheduleViewControllerDelegate?
+      
+    private var titleText: String?
     
-    
+    @IBOutlet weak var scheduleSaveButton: UIButton!
     
     func setUp(){
         //受け取ってきたnoteをそれぞれのlabelに詰める。
@@ -52,7 +54,8 @@ class EditScheduleViewController: UITableViewController {
         let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(self.doneBtn))
         toolBar.items = [toolBarBtn]
         dateTextField.inputAccessoryView = toolBar
-        
+        //タイトルがないと保存ボタンが押せない処理
+        self.validate()
     }
     
     
@@ -91,6 +94,9 @@ class EditScheduleViewController: UITableViewController {
     
       
       
+    @IBAction func scheduleCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
 
@@ -113,5 +119,32 @@ class EditScheduleViewController: UITableViewController {
         //保存したら編集画面を閉じる
         self.dismiss(animated: true, completion: nil)
     }
-
+    
+    
+    
+    
+    
+    @IBAction func titleCount(_ sender: UITextField) {
+          titleText = sender.text
+          self.validate()
+      }
+    
+    
+    private func validate() {
+        // nilの場合はscheduleSaveButtonを非活性に
+        guard let titleTxt = self.titleTextField.text else {
+            
+            self.scheduleSaveButton.isEnabled = false
+            return
+        }
+        // 文字数が0の場合(""空文字)もscheduleSaveButtonを非活性に
+        if titleTxt.count == 0 {
+            
+            self.scheduleSaveButton.isEnabled = false
+            return
+        }
+        // nilでないかつ0文字以上はscheduleSaveButtonを活性に
+        self.scheduleSaveButton.isEnabled = true
+    }
+    
 }
