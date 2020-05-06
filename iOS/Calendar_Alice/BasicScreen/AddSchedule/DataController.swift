@@ -91,6 +91,7 @@ class DataController: NSObject {
          return []
      }
     
+    
 //    predicate：条件を入れるためのもの。検索機能で使おう！
     func fetchNote(value:String) -> [Note] {
         let context = persistentContainer.viewContext
