@@ -883,11 +883,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <view contentMode="scaleToFill" id="lZ8-6G-ZGe">
-                                                    <rect key="frame" x="0.0" y="-2" width="414" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KGs-SH-hKV" firstAttribute="centerY" secondItem="J0u-oX-VCT" secondAttribute="centerY" id="8fZ-5Z-I72"/>

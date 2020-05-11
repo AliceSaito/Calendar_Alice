@@ -36,6 +36,8 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
+
+    
     
     
     override func viewDidLoad() {
@@ -193,6 +195,13 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
             let vc = segue.destination as! AddScheduleViewController
             vc.selectedDate = self.selectedDate
             vc.delegate = self
+            vc.savedClosure = {
+                //この中にAddSheduleでやりたいことを書く。必ずselfをつける。
+                //スケジュールを読み込む
+                self.noteList = self.fetchNote()
+                //スケジュールをリロードして表示
+                self.noteListTableView.reloadData()
+            }
         }
     }
     

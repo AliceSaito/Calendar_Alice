@@ -111,7 +111,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
         if segue.identifier == "dayViewController" {
             let vc = segue.destination as! DayViewController
             vc.selectedItem = self.selectedItem
-            var dateComponents  = DateComponents(calendar:Calendar.current, year: selectedItem!.year, month: selectedItem!.month, day: selectedItem!.day)
+            let dateComponents  = DateComponents(calendar:Calendar.current, year: selectedItem!.year, month: selectedItem!.month, day: selectedItem!.day)
             vc.selectedDate = dateComponents.date!
         }
     }

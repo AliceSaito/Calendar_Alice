@@ -27,6 +27,8 @@ class AddScheduleViewController: UITableViewController {
 //    var selectedItem: MonthInfo?
     
     private var titleText: String?
+    //SAVEした後に呼ぶClosure
+    var savedClosure: (() -> Void)?
     
     //スケジュール一覧を保存するための変数delegate。 AddScheduleViewControllerDelegate?というプロトコル型。
     var delegate: AddScheduleViewControllerDelegate?
@@ -74,6 +76,8 @@ class AddScheduleViewController: UITableViewController {
         appDelegate.dataController.saveContext()
         //delegateを使って、SheduleListViewControllerに通知する。
         delegate?.didSaveNewSchedule()
+        //前の画面（DayViewController）にSAVEしたことを伝える
+        savedClosure?()
         //保存したら編集画面を閉じる
         self.dismiss(animated: true, completion: nil)
         
