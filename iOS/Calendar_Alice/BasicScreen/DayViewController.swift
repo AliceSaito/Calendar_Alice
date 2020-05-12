@@ -52,10 +52,15 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         for i in (1900...2100){
             for j in (1...12) {
                 let m : MonthInfo = MonthInfo(year: i, month: j, day: nil)
-                days.append(getMonthDays(monthInfo: m))
+
+                var monthDays = getMonthDays(monthInfo: m)
+                monthDays = monthDays.filter{ $0 != nil }
+                days.append(monthDays)
+                
+                // 短いやつ
+//                days.append(getMonthDays(monthInfo: m).filter{ $0 != nil})
             }
         }
-
         
         //年/月を表示
         self.yearMonthLabel.text = "\(selectedItem.year)/\(selectedItem.month)"
@@ -163,13 +168,13 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
 extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         //200年分の月の数
         print("🐜", days.count)
         return days.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        print("🌼", days[section].count)
+        print("🌼", section, days[section].count)
         return days[section].count
     }
     //checkはcollection viewのidentifier
@@ -179,13 +184,27 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
         cell.contentView.backgroundColor = .clear
         
         //あるcellにあるデータを詰める
-        if let monthInfoCellData = days[indexPath.item][indexPath.item] {
+        if let monthInfoCellData = days[indexPath.section][indexPath.item] {
+            // cellの中に日付を入れる
             cell.setData(dayOfWeek: monthInfoCellData)
+            
             //選んだ日(selectedItem)と一致する日付をyellowにする処理
             if monthInfoCellData.year == selectedItem.year && monthInfoCellData.month == selectedItem.month && monthInfoCellData.day == selectedItem.day{
                 cell.contentView.backgroundColor = .yellow
             }
             
+            
+            if let day = monthInfoCellData.day {
+                
+                // 5以上かつ27以下
+                if day >= 9 && day <= 23 {
+                    self.yearMonthLabel.text = "\(monthInfoCellData.year)/\(monthInfoCellData.month)"
+                    print(day, "❣️")
+                    //例)下の２つの書き方もできる。スクロールが反映されるのが速すぎて月始と月末を範囲から除外する処理
+                    //if (monthInfoCellData.day != 1 && monthInfoCellData.day == 2 && monthInfoCellData.day == 30 && monthInfoCellData.day == 31)
+                    //if !(monthInfoCellData.day == 1 || monthInfoCellData.day == 2 || monthInfoCellData.day == 30 || monthInfoCellData.day == 31)
+                }
+            }
         }
         
         return cell
@@ -193,7 +212,7 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
     
     //新たに日付をタップしたら、黄色をそっちに移動させる
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedItem = days[indexPath.item][indexPath.item]
+        selectedItem = days[indexPath.section][indexPath.item]
         collectionView.reloadData()
         
         //selectedItemからselectedDateに型を変換
