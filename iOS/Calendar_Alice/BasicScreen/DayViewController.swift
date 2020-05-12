@@ -19,7 +19,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var selectedItem: MonthInfo!
     var selectedDate: Date!
     var noteList: [Note] = []
-    var days: [MonthInfo?] = []
+    var days: [[MonthInfo?]] = []
  
     //日表示のtableViewにスケジュールのタイトルを表示する
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -43,10 +43,19 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         //日表示ではnilが入っている日付を表示させないように、filteringした。
-        days = getMonthDays(monthInfo: self.selectedItem).filter({ (monthinfo) -> Bool in
-            return monthinfo != nil
-        })
-        print("✋", selectedItem.day)
+        //        days = getMonthDays(monthInfo: self.selectedItem).filter({ (monthinfo) -> Bool in
+        //            return monthinfo != nil
+        //        })
+        //        print("✋", selectedItem.day)
+        
+        //日表示画面のカレンダーを表示するためのデータを作る
+        for i in (1900...2100){
+            for j in (1...12) {
+                let m : MonthInfo = MonthInfo(year: i, month: j, day: nil)
+                days.append(getMonthDays(monthInfo: m))
+            }
+        }
+
         
         //年/月を表示
         self.yearMonthLabel.text = "\(selectedItem.year)/\(selectedItem.month)"
@@ -97,19 +106,22 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     
     private func scrollToDate() {
-        var selectedIndex: Int = 0
-        for (index, day) in self.days.enumerated() {
-            if let day = day {
-                if self.selectedItem.year == day.year,
-                    self.selectedItem.month == day.month,
-                    self.selectedItem.day == day.day {
-                    selectedIndex = index
-                    break
-                }
-            }
-        }
+        //        var selectedIndex: Int = 0
+        //        for (index, day) in self.days.enumerated() {
+        //            if let day = day {
+        //                if self.selectedItem.year == day.year,
+        //                    self.selectedItem.month == day.month,
+        //                    self.selectedItem.day == day.day {
+        //                    selectedIndex = index
+        //                    break
+        //                }
+        //            }
+        //        }
+                
+
+        //選んだ日付を表示させる処理
+        let indexPath = IndexPath(item: selectedItem.day!, section: (selectedItem.year - 1900) * 12 + selectedItem.month - 1)
         
-        let indexPath = IndexPath(item: selectedIndex, section: 0)
         self.checkcollectionview.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
         self.checkcollectionview.alpha = 1.0
     }
@@ -151,11 +163,14 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
 extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource{
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        //200年分の月の数
+        print("🐜", days.count)
         return days.count
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        print("🌼", days[section].count)
+        return days[section].count
     }
     //checkはcollection viewのidentifier
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -163,10 +178,11 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
         
         cell.contentView.backgroundColor = .clear
         
-        if let monthInfo = days[indexPath.item] {
-            cell.setData(dayOfWeek: monthInfo)
+        //あるcellにあるデータを詰める
+        if let monthInfoCellData = days[indexPath.item][indexPath.item] {
+            cell.setData(dayOfWeek: monthInfoCellData)
             //選んだ日(selectedItem)と一致する日付をyellowにする処理
-            if monthInfo.year == selectedItem.year && monthInfo.month == selectedItem.month && monthInfo.day == selectedItem.day{
+            if monthInfoCellData.year == selectedItem.year && monthInfoCellData.month == selectedItem.month && monthInfoCellData.day == selectedItem.day{
                 cell.contentView.backgroundColor = .yellow
             }
             
@@ -177,7 +193,7 @@ extension DayViewController:UICollectionViewDelegate, UICollectionViewDataSource
     
     //新たに日付をタップしたら、黄色をそっちに移動させる
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedItem = days[indexPath.item]
+        selectedItem = days[indexPath.item][indexPath.item]
         collectionView.reloadData()
         
         //selectedItemからselectedDateに型を変換

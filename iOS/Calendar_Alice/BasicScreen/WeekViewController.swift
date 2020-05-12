@@ -104,6 +104,7 @@ class WeekViewController: UIViewController, UICollectionViewDataSource,UICollect
         super.viewDidAppear(animated)
         
         scrollToDate(date: selectedDate)
+        print(WeekViewController.monthArr)
     }
     
     //WeekViewControllerからsegueを使ってDaycheduleViewControllerにselectedDateとselectedItemのデータを渡す
